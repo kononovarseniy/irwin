@@ -1,0 +1,6 @@
+Electron mobility versus temperature for different doping levels.
+1. High purity Si (Nd < 1e-12 cm-3); time-of-flight technique (Canali et al. [1973]).
+2. High purity Si (Nd < 4e-13 cm-3); photo-Hall effect (Norton et al. [1973]).
+3. Nd = 1.75e16 cm-3; Na = 1.48e15 cm-3; Hall effect (Morin and Maita [1954]).
+4. Nd = 1.30e17 cm-3; Na = 2.20e15 cm-3; Hall effect (Morin and Maita [1954]).
+
