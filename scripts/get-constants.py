@@ -78,7 +78,7 @@ def display_curve(mat, data, line, name, ps=None):
 
 
 if __name__ == '__main__':
-    lines = get_lines('../../data/Si_mobility.csv')
+    lines = get_lines('../data/Si_mobility.csv')
 
     l1 = lines['1']
     l2 = lines['2']
