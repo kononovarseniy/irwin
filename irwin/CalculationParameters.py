@@ -1,48 +1,46 @@
-from irwin.Singleton import Singleton
-from irwin.Materials.SiliconMaterial import SiliconMaterial
+from irwin.singleton import singleton
 
-@Singleton
+
+@singleton
 class CalculationParameters:
     def __init__(self):
-        self.Material = None
-        self.Temperature = 0.0
-        self.DonorEnergy = 0.0
-        self.AcceptorEnergy = 0.0
-
+        self._material = None
+        self._temperature = 0.0
+        self._donor_energy = 0.0
+        self._acceptor_energy = 0.0
 
     def __repr__(self):
-        return f'Material = {self.Material}, T = {self.Temperature},' \
-            f'Donor E = {self.DonorEnergy}, Acceptor E = {self.AcceptorEnergy}'
+        return f'Material = {self.material}, T = {self.temperature},' \
+               f'Donor E = {self.donor_energy}, Acceptor E = {self.acceptor_energy}'
 
+    @property
+    def material(self):
+        return self._material
 
-    def SetMaterial(self, val):
-        if val == 'Si':
-            self.Material = SiliconMaterial()
-        elif val == 'GaAs':
-            # TODO: Прописать материалы остальные
-            # self.Material = GaAsMaterial()
-            pass
+    @property
+    def temperature(self):
+        return self._temperature
 
-    def SetTemperature(self, val):
-        self.Temperature = val
+    @property
+    def donor_energy(self):
+        return self._donor_energy
 
-    def SetDonorEnergy(self, val):
-        self.DonorEnergy = val
+    @property
+    def acceptor_energy(self):
+        return self._acceptor_energy
 
-    def SetAcceptorEnergy(self, val):
-        self.AcceptorEnergy = val
+    @material.setter
+    def material(self, val):
+        self._material = val
 
+    @temperature.setter
+    def temperature(self, val):
+        self._temperature = val
 
-    def GetMaterial(self):
-        return self.Material
+    @donor_energy.setter
+    def donor_energy(self, val):
+        self._donor_energy = val
 
-    def GetTemperature(self):
-        return self.Temperature
-
-    def GetDonorEnergy(self):
-        return self.DonorEnergy
-
-    def GetAcceptorEnergy(self):
-        return self.AcceptorEnergy
-
-
+    @acceptor_energy.setter
+    def acceptor_energy(self, val):
+        self._acceptor_energy = val

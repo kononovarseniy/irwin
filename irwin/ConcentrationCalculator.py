@@ -1,9 +1,10 @@
 from abc import ABC, abstractmethod
 
-class ConcentrationCalculator:
+
+class ConcentrationCalculator(ABC):
     def __init__(self):
         pass
 
     @abstractmethod
-    def CalcConcentration(self, *args, **kwargs):
+    def calculate_concentration(self, *args, **kwargs):
         pass

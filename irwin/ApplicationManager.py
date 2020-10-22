@@ -1,25 +1,21 @@
-from PyQt5 import QtWidgets
-from irwin.Graphics import Ui_MainWindow
-from irwin.p_SemiconductorModule.p_SemiconductorModule import p_SemiconductorModule
+from irwin.MainWindow import MainWindow
+from irwin.p_semiconductor_module.PSemiconductorModule import PSemiconductorModule
 
-class ApplicationManager():
+
+class ApplicationManager:
 
     def __init__(self):
+        self.application_modules = [
+            PSemiconductorModule(),
+            # NSemiconductorModule()
+        ]
 
-        self.ApplicationModules = \
-            [
-                p_SemiconductorModule(),
-                # n_SemiconductorModule()
-            ]
+        self.gui = MainWindow()
+        self.run_all_modules()
 
-        self.GUI = QtWidgets.QMainWindow()
-        self.UI = Ui_MainWindow()
-        self.UI.setupUi(self.GUI)
-        self.RunAllModules()
+    def run_all_modules(self):
+        for module in self.application_modules:
+            module.run(self.gui)
 
-    def RunAllModules(self):
-        for module in self.ApplicationModules:
-            module.Run(self.UI)
-
-    def ShowGUI(self):
-        self.GUI.show()
+    def show_gui(self):
+        self.gui.show()

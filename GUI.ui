@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1040</width>
+    <height>734</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QComboBox" name="MaterialcomboBox">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>60</y>
+      <width>73</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string/>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Si</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>GaAs</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="Materiallabel">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>60</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Material</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="AcceptorConcentrationlabel">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>110</y>
+      <width>141</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Acceptor Concentration</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="DonorEnergylabel">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>170</y>
+      <width>141</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Donor Energy</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="AcceptorEnergylabel">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>190</y>
+      <width>141</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Acceptor Energy</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Temperaturelabel">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>140</y>
+      <width>141</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Temperature</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="AcceptorConcentrationlineEdit">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>110</y>
+      <width>71</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="DonorEnergylineEdit">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>170</y>
+      <width>71</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="AcceptorEnergylineEdit">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>200</y>
+      <width>71</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="TemperaturelineEdit">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>140</y>
+      <width>71</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>100</y>
+      <width>241</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,100">
+     <property name="leftMargin">
+      <number>10</number>
+     </property>
+     <property name="topMargin">
+      <number>11</number>
+     </property>
+     <property name="rightMargin">
+      <number>11</number>
+     </property>
+     <item>
+      <widget class="QSlider" name="AcceptorConcentrationhorizontalSlider">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSlider" name="TemperaturehorizontalSlider">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSlider" name="DonorEnergyhorizontalSlider">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSlider" name="AcceptorEnergyhorizontalSlider">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>380</y>
+      <width>241</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="QSlider" name="horizontalSlider_8">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSlider" name="horizontalSlider_7">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSlider" name="horizontalSlider_6">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSlider" name="horizontalSlider_5">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QPushButton" name="TestpushButton">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>250</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Test</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="CalculatepushButton">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>250</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Calculate</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1040</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
