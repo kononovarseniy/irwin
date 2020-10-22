@@ -2,3 +2,4 @@ fti-fompy
 scipy
 numpy
 matplotlib
+pyqt5
