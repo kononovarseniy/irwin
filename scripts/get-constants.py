@@ -3,7 +3,8 @@ import csv
 import matplotlib.pyplot as plt
 import numpy as np
 from fompy.constants import *
-from fompy.materials import Si, DopedSemiconductor
+from fompy.materials import Si
+from fompy.models import DopedSemiconductor
 from scipy.optimize import curve_fit
 
 MOBILITY_UNIT = 1 / volt
@@ -77,7 +78,7 @@ def display_curve(mat, data, line, name, ps=None):
 
 
 if __name__ == '__main__':
-    lines = get_lines('data/Si_mobility.csv')
+    lines = get_lines('../data/Si_mobility.csv')
 
     l1 = lines['1']
     l2 = lines['2']
