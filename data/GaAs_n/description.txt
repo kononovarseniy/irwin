@@ -1,0 +1,5 @@
+Electron Hall mobility versus temperature for different doping levels. (Stillman et al. [1970]
+1. Bottom curve: Nd=5e15cm-3;
+2. Middle curve : Nd=1e15cm-3;
+3. Top curve : Nd=5e15cm-3
+For weakly doped GaAs at temperature close to 300 K, electron Hall mobility µH=9400(300/T) cm2 V-1 s-1

@@ -1,0 +1,5 @@
+Temperature dependences of hole mobility for different doping levels.
+1. High purity Si (Na = 1e12 cm-3); time-of-flight technique (Ottaviany et al. [1975]);
+2. High purity Si (Na ~ 1e14 cm-3); Hall-effect (Logan and Peters [1960])
+3. Na = 2.4e16 cm-3; Nd=2.3e15 cm-3; Hall-effect (Morin and Maita [1954])
+4. Na = 2.0e17 cm-3; Nd=4.9e15 cm-3; Hall-effect (Morin and Maita [1954])

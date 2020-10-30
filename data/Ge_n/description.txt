@@ -1,0 +1,5 @@
+Electron mobility versus temperature for different doping levels.
+1. High purity Ge; time-of-flight technique (Jacoboni et al. [1981]);
+2-6. Hall effect Nd - Na(cm-3):
+2. 1e13; 3. 1.4e14; 4. 1.7e15; 5. 7.5e15; 6. 5.5e16 (Debye and Conwell [1954]);
+7. Hall effect Nd - Na=1.2e19(cm-3) (Fistul et al. [1962]).

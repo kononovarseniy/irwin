@@ -1,0 +1,5 @@
+Temperature dependences of hole mobility for different doping levels.
+1. High purity Ge; time-of-flight technique (Ottaviany et al. [1973]).
+2-7. Hall-effect (Golikova et al. [1961]).
+Na-Nd (cm-3): 2. = 4.9e13; 3. 3.2e15; 4. 2.7e16; 5. 1.2e17; 6. 4.9e18; 7. 2.0e20.
+
