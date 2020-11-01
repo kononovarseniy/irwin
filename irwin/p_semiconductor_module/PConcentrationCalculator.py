@@ -1,5 +1,6 @@
 from irwin.ConcentrationCalculator import ConcentrationCalculator
-
+from irwin.p_semiconductor_module import PConcentrationData
+from irwin.p_semiconductor_module import DataVisualiser
 
 class PConcentrationCalculator(ConcentrationCalculator):
     def __init__(self):
@@ -24,7 +25,10 @@ class PConcentrationCalculator(ConcentrationCalculator):
         # Nd физиксировано и меняется в пределах между 10^12 и 10^20
         print(f'Calculator begins calc with parameters {self.__repr__()}')
 
-
-
-
         return
+
+    def init_model(self):
+        self.Model = PConcentrationData()
+
+    def init_view(self):
+        self.View = DataVisualiser(self, self.Model)
