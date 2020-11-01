@@ -1,10 +1,11 @@
 from irwin.ConcentrationCalculator import ConcentrationCalculator
-from irwin.p_semiconductor_module import PConcentrationData
-from irwin.p_semiconductor_module import DataVisualiser
+from irwin.p_semiconductor_module.PConcentrationData import PConcentrationData
+from irwin.p_semiconductor_module.PDataVisualiser import PDataVisualiser
 
 class PConcentrationCalculator(ConcentrationCalculator):
     def __init__(self):
         super().__init__()
+        self.acceptor_concentration = None
         self.temperature = None
         self.acceptor_energy = None
         self.donor_energy = None
@@ -16,14 +17,16 @@ class PConcentrationCalculator(ConcentrationCalculator):
     def calculate_concentration(self, *args, **kwargs):
         self.temperature = kwargs['temperature']
         self.acceptor_energy = kwargs['acceptor_energy']
-        self.acceptor_concentration = kwargs['acceptor_concentration']
         self.donor_energy = kwargs['donor_energy']
         self.material = kwargs['material']
+        self.acceptor_concentration = kwargs['acceptor_concentration']
 
         # Вот теперь приступаем к алгоритму
         # Расчёт для случая Na >> Nd
         # Nd физиксировано и меняется в пределах между 10^12 и 10^20
         print(f'Calculator begins calc with parameters {self.__repr__()}')
+
+
 
         return
 
@@ -31,4 +34,4 @@ class PConcentrationCalculator(ConcentrationCalculator):
         self.Model = PConcentrationData()
 
     def init_view(self):
-        self.View = DataVisualiser(self, self.Model)
+        self.View = PDataVisualiser(self, self.Model)

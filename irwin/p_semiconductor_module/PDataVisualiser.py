@@ -1,10 +1,10 @@
-from irwin.p_semiconductor_module import Visualiser
+from irwin.p_semiconductor_module.Visualiser import Visualiser
 
-class DataVisualiser(Visualiser):
+class PDataVisualiser(Visualiser):
     def __init__(self, controller, model):
         super().__init__(controller, model)
 
 
     #  overriden
     def update_model(self):
-        pass
+        print(f'updating_model')
