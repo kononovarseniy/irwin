@@ -19,3 +19,8 @@ __pycache__/
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
 .idea/**/dbnavigator.xml
+
+# Some new files
+.idea/irwin.iml
+.idea/misc.xml
+

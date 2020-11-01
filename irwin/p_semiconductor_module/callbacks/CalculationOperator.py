@@ -20,5 +20,6 @@ class CalculationOperator(CallbackOperator):
         self.calculator.calculate_concentration(
             temperature=self.parameters.temperature,
             acceptor_energy=self.parameters.acceptor_energy,
+            acceptor_concentration = self.parameters.acceptor_concentration,
             donor_energy=self.parameters.donor_energy,
             material=self.parameters.material)
