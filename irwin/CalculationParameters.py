@@ -8,10 +8,12 @@ class CalculationParameters:
         self._temperature = 0.0
         self._donor_energy = 0.0
         self._acceptor_energy = 0.0
+        self._acceptor_concentration = 0.0
 
     def __repr__(self):
         return f'Material = {self.material}, T = {self.temperature},' \
-               f'Donor E = {self.donor_energy}, Acceptor E = {self.acceptor_energy}'
+               f'Donor E = {self.donor_energy}, Acceptor E = {self.acceptor_energy},' \
+               f'Acceptor concentration = {self.acceptor_concentration}'
 
     @property
     def material(self):
@@ -29,6 +31,10 @@ class CalculationParameters:
     def acceptor_energy(self):
         return self._acceptor_energy
 
+    @property
+    def acceptor_concentration(self):
+        return self._acceptor_concentration
+
     @material.setter
     def material(self, val):
         self._material = val
@@ -44,3 +50,7 @@ class CalculationParameters:
     @acceptor_energy.setter
     def acceptor_energy(self, val):
         self._acceptor_energy = val
+
+    @acceptor_concentration.setter
+    def acceptor_concentration(self, val):
+        self._acceptor_concentration = val

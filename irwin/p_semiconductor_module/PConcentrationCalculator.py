@@ -15,11 +15,16 @@ class PConcentrationCalculator(ConcentrationCalculator):
     def calculate_concentration(self, *args, **kwargs):
         self.temperature = kwargs['temperature']
         self.acceptor_energy = kwargs['acceptor_energy']
+        self.acceptor_concentration = kwargs['acceptor_concentration']
         self.donor_energy = kwargs['donor_energy']
         self.material = kwargs['material']
 
         # Вот теперь приступаем к алгоритму
+        # Расчёт для случая Na >> Nd
+        # Nd физиксировано и меняется в пределах между 10^12 и 10^20
         print(f'Calculator begins calc with parameters {self.__repr__()}')
+
+
 
 
         return

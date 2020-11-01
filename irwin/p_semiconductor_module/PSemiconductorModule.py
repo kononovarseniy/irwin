@@ -11,8 +11,9 @@ class PSemiconductorModule(ApplicationModule):
             TemperatureCallbackOperator(),
             DonorEnergyCallbackOperator(),
             SemiconductorMaterialOperator(),
-            CalculationOperator()
-            # AcceptorEnergyCallBackOperator
+            CalculationOperator(),
+            # TODO: AcceptorConcentrationCallBackOperator
+            # TODO: AcceptorEnergyCallBackOperator
             # ...
             # TODO: Сделать всё аналогично + поправить баг, на  значения не те, что в GUIParameters указаны
         ]
