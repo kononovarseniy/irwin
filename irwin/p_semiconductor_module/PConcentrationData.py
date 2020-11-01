@@ -19,11 +19,14 @@ class PConcentrationData(ConcentrationData):
     @rho.setter
     def rho(self, val):
         self._rho = val
+        self.notify_observers()
 
     @property
     def sigma(self):
         return self._sigma
 
+
     @sigma.setter
     def sigma(self, val):
         self._sigma = val
+        self.notify_observers()
