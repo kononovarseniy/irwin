@@ -13,7 +13,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
-        MainWindow.setObjectName("main_window")
+        MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1040, 734)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -102,6 +102,15 @@ class Ui_MainWindow(object):
         self.CalculatepushButton = QtWidgets.QPushButton(self.centralwidget)
         self.CalculatepushButton.setGeometry(QtCore.QRect(710, 250, 93, 28))
         self.CalculatepushButton.setObjectName("CalculatepushButton")
+        self.ResistivityradioButton = QtWidgets.QRadioButton(self.centralwidget)
+        self.ResistivityradioButton.setEnabled(True)
+        self.ResistivityradioButton.setGeometry(QtCore.QRect(700, 60, 121, 20))
+        self.ResistivityradioButton.setAutoFillBackground(False)
+        self.ResistivityradioButton.setChecked(True)
+        self.ResistivityradioButton.setObjectName("ResistivityradioButton")
+        self.ConductivityradioButton = QtWidgets.QRadioButton(self.centralwidget)
+        self.ConductivityradioButton.setGeometry(QtCore.QRect(830, 60, 121, 20))
+        self.ConductivityradioButton.setObjectName("ConductivityradioButton")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1040, 26))
@@ -116,13 +125,16 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("main_window", "main_window"))
-        self.MaterialcomboBox.setItemText(1, _translate("main_window", "Si"))
-        self.MaterialcomboBox.setItemText(2, _translate("main_window", "GaAs"))
-        self.Materiallabel.setText(_translate("main_window", "Material"))
-        self.AcceptorConcentrationlabel.setText(_translate("main_window", "Acceptor Concentration"))
-        self.DonorEnergylabel.setText(_translate("main_window", "Donor Energy"))
-        self.AcceptorEnergylabel.setText(_translate("main_window", "Acceptor Energy"))
-        self.Temperaturelabel.setText(_translate("main_window", "Temperature"))
-        self.TestpushButton.setText(_translate("main_window", "Test"))
-        self.CalculatepushButton.setText(_translate("main_window", "Calculate"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.MaterialcomboBox.setItemText(1, _translate("MainWindow", "Si"))
+        self.MaterialcomboBox.setItemText(2, _translate("MainWindow", "GaAs"))
+        self.Materiallabel.setText(_translate("MainWindow", "Material"))
+        self.AcceptorConcentrationlabel.setText(_translate("MainWindow", "Acceptor Concentration"))
+        self.DonorEnergylabel.setText(_translate("MainWindow", "Donor Energy"))
+        self.AcceptorEnergylabel.setText(_translate("MainWindow", "Acceptor Energy"))
+        self.Temperaturelabel.setText(_translate("MainWindow", "Temperature"))
+        self.TestpushButton.setText(_translate("MainWindow", "Test"))
+        self.CalculatepushButton.setText(_translate("MainWindow", "Calculate"))
+        self.ResistivityradioButton.setText(_translate("MainWindow", "Plot Resistivity"))
+        self.ConductivityradioButton.setText(_translate("MainWindow", "Plot Conductivity"))
+
