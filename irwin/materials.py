@@ -1,4 +1,12 @@
 from fompy.materials import Si, Ge, GaAs
+from fompy.units import unit
+
+
+MOBILITY_UNIT = unit('cm^2 / V s')
+RESISTIVITY_UNIT = unit('Ohm cm')
+CONCENTRATION_UNIT = unit('cm-3')
+A_UNIT = unit('cm^2 K^3/2 / V s')
+B_UNIT = unit('K^3')
 
 
 class Material:
@@ -10,7 +18,7 @@ class Material:
 
 # TODO: insert calculated constants
 MATERIALS = {
-    'Si': Material(Si, 1, 1),
-    'Ge': Material(Ge, 1, 1),
-    'GaAs': Material(GaAs, 1, 1)
+    'Si': Material(Si, 2.413845e+06 * A_UNIT, 1.223030e-12 * B_UNIT),
+    'Ge': Material(Ge, 2.413845e+06 * A_UNIT, 1.223030e-12 * B_UNIT),
+    'GaAs': Material(GaAs, 2.413845e+06 * A_UNIT, 1.223030e-12 * B_UNIT)
 }
