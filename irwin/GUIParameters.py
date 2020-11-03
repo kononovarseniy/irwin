@@ -13,14 +13,17 @@ class GUIParameters:
     DonorEnergySliderMin = DonorEnergySliderMin * DonorEnergyCalcConstant
     DonorEnergySliderMax = DonorEnergySliderMax * DonorEnergyCalcConstant
 
+
+
+    AcceptorEnergyCalcConstant = 10000
     AcceptorEnergySliderMin = 0.0
-    AcceptorEnergySliderMax = 5.0  # electron-Volt
+    AcceptorEnergySliderMax = 1.0  # electron-Volt
     AcceptorEnergyLineEditAccuracy = 2
-    AcceptorEnergySliderMin = AcceptorEnergySliderMin ** AcceptorEnergyLineEditAccuracy  # These calculations for correct
-    AcceptorEnergySliderMax = AcceptorEnergySliderMax ** AcceptorEnergyLineEditAccuracy
+    AcceptorEnergySliderMin = AcceptorEnergySliderMin * AcceptorEnergyCalcConstant
+    AcceptorEnergySliderMax = AcceptorEnergySliderMax * AcceptorEnergyCalcConstant
 
 
-    AcceptorConcentrationCalcConstant = 10
+    AcceptorConcentrationCalcConstant = 100
     AcceptorConcentrationSliderMin = 1.0 * AcceptorConcentrationCalcConstant
     AcceptorConcentrationSliderMax = 9.0 * AcceptorConcentrationCalcConstant  # ХЗ зачем нужна такая константа (10)
     AcceptorConcentrationLineEditAccuracy = 2
