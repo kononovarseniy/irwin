@@ -5,11 +5,12 @@ class GUIParameters:
     TemperatureSliderMin = TemperatureSliderMin ** TemperatureLineEditAccuracy  # These calculations for correct
     TemperatureSliderMax = TemperatureSliderMax ** TemperatureLineEditAccuracy
 
+    DonorEnergyCalcConstant = 10000
     DonorEnergySliderMin = 0.0
-    DonorEnergySliderMax = 5.0  # electron-Volt
+    DonorEnergySliderMax = 2.0  # electron-Volt
     DonorEnergyLineEditAccuracy = 2
-    DonorEnergySliderMin = DonorEnergySliderMin ** DonorEnergyLineEditAccuracy  # These calculations for correct
-    DonorEnergySliderMax = DonorEnergySliderMax ** DonorEnergyLineEditAccuracy
+    DonorEnergySliderMin = DonorEnergySliderMin * DonorEnergyCalcConstant
+    DonorEnergySliderMax = DonorEnergySliderMax * DonorEnergyCalcConstant
 
     AcceptorEnergySliderMin = 0.0
     AcceptorEnergySliderMax = 5.0  # electron-Volt

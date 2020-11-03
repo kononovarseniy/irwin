@@ -31,14 +31,13 @@ class DonorEnergyCallbackOperator(CallbackOperator):
             line_edit_text = '0'
 
         line_edit_text = line_edit_text.replace(',', '.')
-        value = float(line_edit_text)  # * 10.0
+        value = float(line_edit_text)
         self.window.DonorEnergyhorizontalSlider.setValue(
-            value * (10 ** GUIParameters.DonorEnergyLineEditAccuracy))
+            value * GUIParameters.DonorEnergyCalcConstant)
 
     def update_energy_line_edit(self):
         value_to_set = self.window.DonorEnergyhorizontalSlider.value()
-        value_to_set /= 10 ** GUIParameters.DonorEnergyLineEditAccuracy  # These calculations
-        # are for correct scaling on the slider
+        value_to_set /= GUIParameters.DonorEnergyCalcConstant
         text_to_set = str(value_to_set).replace('.', ',')
         self.window.DonorEnergylineEdit.setText(str(text_to_set))
         self.update_donor_energy(value_to_set)
