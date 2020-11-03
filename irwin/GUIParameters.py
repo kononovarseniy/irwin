@@ -1,9 +1,10 @@
 class GUIParameters:
+    TemperatureCalcConstant = 100
     TemperatureSliderMin = 0.0
     TemperatureSliderMax = 500.0  # Kelvin
     TemperatureLineEditAccuracy = 2
-    TemperatureSliderMin = TemperatureSliderMin ** TemperatureLineEditAccuracy  # These calculations for correct
-    TemperatureSliderMax = TemperatureSliderMax ** TemperatureLineEditAccuracy
+    TemperatureSliderMin = TemperatureSliderMin * TemperatureCalcConstant  # These calculations for correct
+    TemperatureSliderMax = TemperatureSliderMax * TemperatureCalcConstant
 
     DonorEnergyCalcConstant = 10000
     DonorEnergySliderMin = 0.0

@@ -18,8 +18,8 @@ class TemperatureCallbackOperator(CallbackOperator):
             validator_max=GUIParameters.TemperatureSliderMax,
             validator_accuracy=GUIParameters.TemperatureLineEditAccuracy,
             line_edit=self.window.TemperaturelineEdit,
-            slider_min=GUIParameters.TemperatureSliderMin / 5,
-            slider_max=GUIParameters.TemperatureSliderMax / 5,
+            slider_min=GUIParameters.TemperatureSliderMin,
+            slider_max=GUIParameters.TemperatureSliderMax,
             slider=self.window.TemperaturehorizontalSlider,
             update_slider_func=self.update_temperature_slider,
             update_line_edit_func=self.update_temperature_line_edit
@@ -34,11 +34,11 @@ class TemperatureCallbackOperator(CallbackOperator):
         line_edit_text = line_edit_text.replace(',', '.')
         value = float(line_edit_text)  # * 10.0
         self.window.TemperaturehorizontalSlider.setValue(
-            value * (10 ** GUIParameters.TemperatureLineEditAccuracy))
+            value * GUIParameters.TemperatureCalcConstant)
 
     def update_temperature_line_edit(self):
         value_to_set = self.window.TemperaturehorizontalSlider.value()
-        value_to_set /= 10 ** GUIParameters.TemperatureLineEditAccuracy  # These calculations
+        value_to_set /= GUIParameters.TemperatureCalcConstant  # These calculations
         # are for correct scaling on the slider
         text_to_set = str(value_to_set).replace('.', ',')
         self.window.TemperaturelineEdit.setText(str(text_to_set))
