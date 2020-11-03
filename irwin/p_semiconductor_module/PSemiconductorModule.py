@@ -4,6 +4,7 @@ from irwin.p_semiconductor_module.callbacks.DonorEnergyCallBackOperator import D
 from irwin.p_semiconductor_module.callbacks.SemiconductorMaterialOperator import SemiconductorMaterialOperator
 from irwin.p_semiconductor_module.callbacks.TemperatureCallBackOperator import TemperatureCallbackOperator
 from irwin.p_semiconductor_module.callbacks.RadioButtonsCallBackOperator import RadioButtonsCallBackOperator
+from irwin.p_semiconductor_module.callbacks.AcceptorConcentrationCallBackOperator import AcceptorConcentrationCallbackOperator
 
 class PSemiconductorModule(ApplicationModule):
     callback_operators = \
@@ -12,8 +13,8 @@ class PSemiconductorModule(ApplicationModule):
             DonorEnergyCallbackOperator(),
             SemiconductorMaterialOperator(),
             CalculationOperator(),
-            RadioButtonsCallBackOperator()
-            # TODO: AcceptorConcentrationCallBackOperator
+            RadioButtonsCallBackOperator(),
+            AcceptorConcentrationCallbackOperator()
             # TODO: AcceptorEnergyCallBackOperator
             # ...
             # TODO: Сделать всё аналогично + поправить баг, на  значения не те, что в GUIParameters указаны
