@@ -16,3 +16,10 @@ class GUIParameters:
     AcceptorEnergyLineEditAccuracy = 2
     AcceptorEnergySliderMin = AcceptorEnergySliderMin ** AcceptorEnergyLineEditAccuracy  # These calculations for correct
     AcceptorEnergySliderMax = AcceptorEnergySliderMax ** AcceptorEnergyLineEditAccuracy
+
+
+    AcceptorConcentrationCalcConstant = 10
+    AcceptorConcentrationSliderMin = 1.0 * AcceptorConcentrationCalcConstant
+    AcceptorConcentrationSliderMax = 9.0 * AcceptorConcentrationCalcConstant  # ХЗ зачем нужна такая константа (10)
+    AcceptorConcentrationLineEditAccuracy = 2
+

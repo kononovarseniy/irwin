@@ -2,6 +2,7 @@ from irwin.ConcentrationCalculator import ConcentrationCalculator
 from irwin.p_semiconductor_module.PConcentrationData import PConcentrationData
 from irwin.p_semiconductor_module.PDataVisualiser import PDataVisualiser
 from scripts.curve import *
+from sys import exc_info
 
 class PConcentrationCalculator(ConcentrationCalculator):
     def __init__(self):
@@ -13,7 +14,8 @@ class PConcentrationCalculator(ConcentrationCalculator):
         self.material = None
 
     def __repr__(self):
-        return f'T={self.temperature}, AcceptorE={self.acceptor_energy}, DonorE={self.donor_energy}'
+        return f'T={self.temperature}, AcceptorE={self.acceptor_energy}, DonorE={self.donor_energy},' \
+               f'material={self.material}, acceptor concentration={self.acceptor_concentration}'
 
     def calculate_concentration(self, *args, **kwargs):
         self.temperature = kwargs['temperature']
@@ -27,16 +29,19 @@ class PConcentrationCalculator(ConcentrationCalculator):
         # Nd физиксировано и меняется в пределах между 10^12 и 10^20
         print(f'Calculator begins calc with parameters {self.__repr__()}')
 
-        f = np.vectorize(resistivity)
+        try:
+            f = np.vectorize(resistivity)
 
-        # Prepare x array
-        Nds = np.logspace(self.Model.Nd_min_order, self.Model.Nd_max_order, self.Model.points_number)
-        ys = f(self.material, self.acceptor_concentration, self.acceptor_energy, Nds, self.donor_energy, self.temperature)
+            # Prepare x array
+            Nds = np.logspace(self.Model.Nd_min_order, self.Model.Nd_max_order, self.Model.points_number)
+            ys = f(self.material, self.acceptor_concentration, self.acceptor_energy, Nds, self.donor_energy, self.temperature)
 
 
-        self.Model.sigma = [(1 / val) for val in ys]
-        self.Model.rho = ys
-        self.Model.Nds = Nds
+            self.Model.sigma = [(1 / val) for val in ys]
+            self.Model.rho = ys
+            self.Model.Nds = Nds
+        except:
+            print(exc_info())
 
         return
 
