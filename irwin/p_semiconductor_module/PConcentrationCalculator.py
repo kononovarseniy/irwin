@@ -1,8 +1,10 @@
 from irwin.ConcentrationCalculator import ConcentrationCalculator
 from irwin.p_semiconductor_module.PConcentrationData import PConcentrationData
 from irwin.p_semiconductor_module.PDataVisualiser import PDataVisualiser
-from scripts.curve import *
 from sys import exc_info
+import numpy as np
+from irvin.resistivityCalculation import *
+
 
 class PConcentrationCalculator(ConcentrationCalculator):
     def __init__(self):
@@ -30,16 +32,17 @@ class PConcentrationCalculator(ConcentrationCalculator):
         print(f'Calculator begins calc with parameters {self.__repr__()}')
 
         try:
-            f = np.vectorize(resistivity)
-
             # Prepare x array
-            Nds = np.logspace(self.Model.Nd_min_order, self.Model.Nd_max_order, self.Model.points_number)
-            ys = f(self.material, self.acceptor_concentration, self.acceptor_energy, Nds, self.donor_energy, self.temperature)
+            Nds = np.logspace(self.Model.Nd_min_order,
+                              self.Model.Nd_max_order, self.Model.points_number)
+            f = np.vectorize(resistivity)
+            ys = f(self.material, Nds,
+                   self.acceptor_energy * eV, self.acceptor_concentration, self.donor_energy * eV, self.temperature)
 
-
-            self.Model.sigma = [(1 / val) for val in ys]
-            self.Model.rho = ys
-            self.Model.Nds = Nds
+            self.Model.Nds = Nds / CONCENTRATION_UNIT
+            self.Model.rho = ys / RESISTIVITY_UNIT
+            self.Model.sigma = 1 / ys
+            self.Model.notify_observers()
         except:
             print(exc_info())
 
