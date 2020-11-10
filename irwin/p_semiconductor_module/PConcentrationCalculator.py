@@ -3,7 +3,7 @@ from irwin.p_semiconductor_module.PConcentrationData import PConcentrationData
 from irwin.p_semiconductor_module.PDataVisualiser import PDataVisualiser
 from sys import exc_info
 import numpy as np
-from irvin.resistivityCalculation import *
+from irwin.resistivityCalculation import *
 
 
 class PConcentrationCalculator(ConcentrationCalculator):
