@@ -1,5 +1,5 @@
 from irwin.ApplicationModule import ApplicationModule
-from irwin.n_semiconductor_module.callbacks.TemperatureCallBackOperator import n_TemperatureCallbackOperator
+from irwin.n_semiconductor_module.callbacks.n_TemperatureCallBackOperator import n_TemperatureCallbackOperator
 
 # from irwin.p_semiconductor_module.callbacks.CalculationOperator import n_CalculationOperator
 # from irwin.p_semiconductor_module.callbacks.DonorEnergyCallBackOperator import n_DonorEnergyCallbackOperator
@@ -12,7 +12,7 @@ from irwin.n_semiconductor_module.callbacks.TemperatureCallBackOperator import n
 class NSemiconductorModule(ApplicationModule):
     callback_operators = \
         [
-            # n_TemperatureCallbackOperator(),
+            n_TemperatureCallbackOperator(),
             # DonorEnergyCallbackOperator(),
             # SemiconductorMaterialOperator(),
             # CalculationOperator(),
