@@ -1,5 +1,6 @@
 from irwin.MainWindow import MainWindow
 from irwin.p_semiconductor_module.PSemiconductorModule import PSemiconductorModule
+from irwin.n_semiconductor_module.NSemiconductorModule import NSemiconductorModule
 
 
 class ApplicationManager:
@@ -7,7 +8,7 @@ class ApplicationManager:
     def __init__(self):
         self.application_modules = [
             PSemiconductorModule(),
-            # NSemiconductorModule()
+            NSemiconductorModule()
         ]
 
         self.gui = MainWindow()

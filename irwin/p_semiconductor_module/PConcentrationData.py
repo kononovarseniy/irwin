@@ -8,8 +8,6 @@ class PConcentrationData(ConcentrationData):
         self._Nd_max_order = 20
         self._points_number = 100
 
-        self._rho = []  # Resistivity
-        self._sigma = []  # Conductivity
         self._Nds = []  # X array - donor concentrations
 
     @property
@@ -31,19 +29,3 @@ class PConcentrationData(ConcentrationData):
     @Nds.setter
     def Nds(self, val):
         self._Nds = val
-
-    @property
-    def rho(self):
-        return self._rho
-
-    @rho.setter
-    def rho(self, val):
-        self._rho = val
-
-    @property
-    def sigma(self):
-        return self._sigma
-
-    @sigma.setter
-    def sigma(self, val):
-        self._sigma = val

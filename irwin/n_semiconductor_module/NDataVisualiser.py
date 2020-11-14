@@ -1,35 +1,34 @@
 from irwin.p_semiconductor_module.Visualiser import Visualiser
 import matplotlib.pyplot as plt
-from irwin.PCalculationParameters import PCalculationParameters
+from irwin.NCalculationParameters import NCalculationParameters
 
 
-class PDataVisualiser(Visualiser):
+class NDataVisualiser(Visualiser):
     def __init__(self, controller, model):
         super().__init__(controller, model)
         self._figure = plt.figure()
         self._graph = self._figure.add_subplot(111)
-        self._plotting_parameters = PCalculationParameters()
+        self._plotting_parameters = NCalculationParameters()
 
     def plot_resistivity(self):
         self._graph.plot(
-            self._model.Nds, self._model.rho
+            self._model.Nas, self._model.rho
         )
-        plt.title('Irwin Curve')
+        plt.title('Irwin Curve P type')
         plt.ylabel('Resistivity')
-        plt.xlabel('Donor concentrations')
+        plt.xlabel('Acceptor concentrations')
         self.draw_grid()
 
     def plot_conductivity(self):
         self._graph.plot(
-            self._model.Nds, self._model.sigma
+            self._model.Nas, self._model.sigma
         )
-        plt.title('Irwin Curve')
+        plt.title('Irwin Curve P type')
         plt.ylabel('Conductivity')
-        plt.xlabel('Donor concentrations')
+        plt.xlabel('Acceptor concentrations')
         self.draw_grid()
 
     #  overriden
-
     def update_model(self):
         print(f'updating_model')
         self._graph.clear()

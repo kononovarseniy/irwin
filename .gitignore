@@ -23,4 +23,6 @@ __pycache__/
 # Some new files
 .idea/irwin.iml
 .idea/misc.xml
+.idea/other.xml
+
 

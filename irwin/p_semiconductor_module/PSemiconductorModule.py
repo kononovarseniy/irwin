@@ -17,13 +17,8 @@ class PSemiconductorModule(ApplicationModule):
             RadioButtonsCallBackOperator(),
             AcceptorConcentrationCallbackOperator(),
             AcceptorEnergyCallBackOperator()
-            # ...
-            # TODO: Сделать всё аналогично + поправить баг, на  значения не те, что в GUIParameters указаны
         ]
 
     def __init__(self):
         self.window = None
 
-    def run(self, main_window):
-        self.main_window = main_window
-        self.connect_all_callbacks()

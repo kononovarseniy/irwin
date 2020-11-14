@@ -1,12 +1,12 @@
-from irwin.PCalculationParameters import PCalculationParameters
+from irwin.NCalculationParameters import NCalculationParameters
 from irwin.CallbackOperator import CallbackOperator
 from irwin.GUIParameters import GUIParameters
 
 
-class AcceptorEnergyCallBackOperator(CallbackOperator):
+class n_AcceptorEnergyCallBackOperator(CallbackOperator):
     def __init__(self):
         self.window = None
-        self.parameters = PCalculationParameters()
+        self.parameters = NCalculationParameters()
 
     def connect_callback(self, window):
         self.window = window
@@ -15,26 +15,26 @@ class AcceptorEnergyCallBackOperator(CallbackOperator):
             validator_min=GUIParameters.AcceptorEnergySliderMin,
             validator_max=GUIParameters.AcceptorEnergySliderMax,
             validator_accuracy=GUIParameters.AcceptorEnergyLineEditAccuracy,
-            line_edit=self.window.AcceptorEnergylineEdit,
+            line_edit=self.window.n_AcceptorEnergylineEdit,
             slider_min=GUIParameters.AcceptorEnergySliderMin,
             slider_max=GUIParameters.AcceptorEnergySliderMax,
-            slider=self.window.AcceptorEnergyhorizontalSlider,
+            slider=self.window.n_AcceptorEnergyhorizontalSlider,
             update_slider_func=self.update_energy_slider,
             update_line_edit_func=self.update_energy_line_edit
         )
 
     def update_energy_slider(self):
         self.update_slider(
-            line_edit=self.window.AcceptorEnergylineEdit,
-            slider=self.window.AcceptorEnergyhorizontalSlider,
+            line_edit=self.window.n_AcceptorEnergylineEdit,
+            slider=self.window.n_AcceptorEnergyhorizontalSlider,
             calc_constant=GUIParameters.AcceptorEnergyCalcConstant
         )
 
 
     def update_energy_line_edit(self):
         self.update_line_edit(
-            line_edit=self.window.AcceptorEnergylineEdit,
-            slider=self.window.AcceptorEnergyhorizontalSlider,
+            line_edit=self.window.n_AcceptorEnergylineEdit,
+            slider=self.window.n_AcceptorEnergyhorizontalSlider,
             calc_constant=GUIParameters.AcceptorEnergyCalcConstant,
             update_model_func=self.update_acceptor_energy
         )
