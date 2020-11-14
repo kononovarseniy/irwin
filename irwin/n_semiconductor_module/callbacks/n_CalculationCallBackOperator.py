@@ -14,7 +14,7 @@ class n_CalculationCallBackOperator(CallbackOperator):
         window.n_CalculatepushButton.clicked.connect(self.calc_irwin_curve)
 
     def calc_irwin_curve(self):
-        print('Recalculating the p concentration')
+        print('Recalculating the n concentration')
         self.calculator.calculate_concentration(
             temperature=self.parameters.temperature,
             acceptor_energy=self.parameters.acceptor_energy,
