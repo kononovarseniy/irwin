@@ -30,16 +30,11 @@ class AcceptorConcentrationCallbackOperator(CallbackOperator):
         self.update_acc_concentration_line_edit()
 
     def update_acc_concentration_slider(self):
-        # TODO: fix duplicated code
-
-        line_edit_text = self.window.AcceptorConcentrationlineEdit.text()
-
-        if len(line_edit_text) == 0:
-            line_edit_text = '0'
-        line_edit_text = line_edit_text.replace(',', '.')
-        value = float(line_edit_text)
-        self.window.TemperaturehorizontalSlider.setValue(
-            value * (10 ** GUIParameters.AcceptorConcentrationLineEditAccuracy))
+        self.update_slider(
+            line_edit=self.window.AcceptorConcentrationlineEdit,
+            slider=self.window.AcceptorConcentrationhorizontalSlider,
+            calc_constant=GUIParameters.AcceptorConcentrationCalcConstant
+        )
 
 
     def update_acc_concentration_line_edit(self):
