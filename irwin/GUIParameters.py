@@ -28,3 +28,10 @@ class GUIParameters:
     AcceptorConcentrationSliderMax = 9.0 * AcceptorConcentrationCalcConstant  # ХЗ зачем нужна такая константа (10)
     AcceptorConcentrationLineEditAccuracy = 2
 
+
+    DonorConcentrationCalcConstant = 100
+    DonorConcentrationSliderMin = 1.0 * DonorConcentrationCalcConstant
+    DonorConcentrationSliderMax = 9.0 * DonorConcentrationCalcConstant  # ХЗ зачем нужна такая константа (10)
+    DonorConcentrationLineEditAccuracy = 2
+
+
