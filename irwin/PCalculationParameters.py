@@ -2,7 +2,7 @@ from irwin.singleton import singleton
 
 
 @singleton
-class CalculationParameters:
+class PCalculationParameters:
     def __init__(self):
         self._material = None
         self._temperature = 0.0

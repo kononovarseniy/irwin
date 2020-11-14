@@ -1,4 +1,4 @@
-from irwin.CalculationParameters import CalculationParameters
+from irwin.PCalculationParameters import PCalculationParameters
 from irwin.CallbackOperator import CallbackOperator
 from irwin.GUIParameters import GUIParameters
 
@@ -6,7 +6,7 @@ from irwin.GUIParameters import GUIParameters
 class DonorEnergyCallbackOperator(CallbackOperator):
     def __init__(self):
         self.window = None
-        self.parameters = CalculationParameters()
+        self.parameters = PCalculationParameters()
 
     def connect_callback(self, window):
         self.window = window
@@ -24,23 +24,21 @@ class DonorEnergyCallbackOperator(CallbackOperator):
         )
 
     def update_energy_slider(self):
-        # TODO: fix duplicated code
-        line_edit_text = self.window.DonorEnergylineEdit.text()
+        self.update_slider(
+            line_edit=self.window.DonorEnergylineEdit,
+            slider=self.window.DonorEnergyhorizontalSlider,
+            calc_constant=GUIParameters.DonorEnergyCalcConstant
+        )
 
-        if len(line_edit_text) == 0:
-            line_edit_text = '0'
-
-        line_edit_text = line_edit_text.replace(',', '.')
-        value = float(line_edit_text)
-        self.window.DonorEnergyhorizontalSlider.setValue(
-            value * GUIParameters.DonorEnergyCalcConstant)
 
     def update_energy_line_edit(self):
-        value_to_set = self.window.DonorEnergyhorizontalSlider.value()
-        value_to_set /= GUIParameters.DonorEnergyCalcConstant
-        text_to_set = str(value_to_set).replace('.', ',')
-        self.window.DonorEnergylineEdit.setText(str(text_to_set))
-        self.update_donor_energy(value_to_set)
+        self.update_line_edit(
+            line_edit=self.window.DonorEnergylineEdit,
+            slider=self.window.DonorEnergyhorizontalSlider,
+            calc_constant=GUIParameters.DonorEnergyCalcConstant,
+            update_model_func=self.update_donor_energy
+        )
+
 
     def update_donor_energy(self, val):
         self.parameters.donor_energy = val

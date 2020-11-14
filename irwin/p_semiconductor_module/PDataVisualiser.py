@@ -1,6 +1,6 @@
 from irwin.p_semiconductor_module.Visualiser import Visualiser
 import matplotlib.pyplot as plt
-from irwin.CalculationParameters import CalculationParameters
+from irwin.PCalculationParameters import PCalculationParameters
 
 
 class PDataVisualiser(Visualiser):
@@ -8,7 +8,7 @@ class PDataVisualiser(Visualiser):
         super().__init__(controller, model)
         self._figure = plt.figure()
         self._graph = self._figure.add_subplot(111)
-        self._plotting_parameters = CalculationParameters()
+        self._plotting_parameters = PCalculationParameters()
 
     def plot_resistivity(self):
         self._graph.plot(

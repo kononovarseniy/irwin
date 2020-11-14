@@ -1,6 +1,6 @@
 import sys
 
-from irwin.CalculationParameters import CalculationParameters
+from irwin.PCalculationParameters import PCalculationParameters
 from irwin.CallbackOperator import CallbackOperator
 from irwin.GUIParameters import GUIParameters
 
@@ -8,7 +8,8 @@ from irwin.GUIParameters import GUIParameters
 class TemperatureCallbackOperator(CallbackOperator):
     def __init__(self):
         self.window = None
-        self.parameters = CalculationParameters()
+        self.parameters = PCalculationParameters()
+
 
     def connect_callback(self, window):
         self.window = window
@@ -25,24 +26,23 @@ class TemperatureCallbackOperator(CallbackOperator):
             update_line_edit_func=self.update_temperature_line_edit
         )
 
-    def update_temperature_slider(self):
-        # TODO: fix duplicated code
-        line_edit_text = self.window.TemperaturelineEdit.text()
 
-        if len(line_edit_text) == 0:
-            line_edit_text = '0'
-        line_edit_text = line_edit_text.replace(',', '.')
-        value = float(line_edit_text)  # * 10.0
-        self.window.TemperaturehorizontalSlider.setValue(
-            value * GUIParameters.TemperatureCalcConstant)
+    def update_temperature_slider(self):
+        self.update_slider(
+            line_edit=self.window.TemperaturelineEdit,
+            slider=self.window.TemperaturehorizontalSlider,
+            calc_constant=GUIParameters.TemperatureCalcConstant
+        )
+
 
     def update_temperature_line_edit(self):
-        value_to_set = self.window.TemperaturehorizontalSlider.value()
-        value_to_set /= GUIParameters.TemperatureCalcConstant  # These calculations
-        # are for correct scaling on the slider
-        text_to_set = str(value_to_set).replace('.', ',')
-        self.window.TemperaturelineEdit.setText(str(text_to_set))
-        self.update_temperature(value_to_set)
+        self.update_line_edit(
+            line_edit=self.window.TemperaturelineEdit,
+            slider=self.window.TemperaturehorizontalSlider,
+            calc_constant=GUIParameters.TemperatureCalcConstant,
+            update_model_func=self.update_temperature
+        )
+
 
     def update_temperature(self, val):
         self.parameters.temperature = val
