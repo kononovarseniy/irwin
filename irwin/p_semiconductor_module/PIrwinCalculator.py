@@ -1,4 +1,4 @@
-from irwin.ConcentrationCalculator import ConcentrationCalculator
+from irwin.IrwinCalculator import IrwinCalculator
 from irwin.p_semiconductor_module.PConcentrationData import PConcentrationData
 from irwin.p_semiconductor_module.PDataVisualiser import PDataVisualiser
 from sys import exc_info
@@ -6,14 +6,10 @@ import numpy as np
 from irwin.resistivityCalculation import *
 
 
-class PConcentrationCalculator(ConcentrationCalculator):
+class PIrwinCalculator(IrwinCalculator):
     def __init__(self):
         super().__init__()
         self.acceptor_concentration = None
-        self.temperature = None
-        self.acceptor_energy = None
-        self.donor_energy = None
-        self.material = None
 
     def __repr__(self):
         return f'T={self.temperature}, AcceptorE={self.acceptor_energy}, DonorE={self.donor_energy},' \

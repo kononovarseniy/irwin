@@ -5,6 +5,8 @@ class ConcentrationData:
         self.Visualisers = []
 
 
+
+
     def add_visualiser(self, Visualiser):
         self.Visualisers.append(Visualiser)
 

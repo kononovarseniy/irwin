@@ -1,6 +1,6 @@
 from irwin.PCalculationParameters import PCalculationParameters
 from irwin.CallbackOperator import CallbackOperator
-from irwin.p_semiconductor_module.PConcentrationCalculator import PConcentrationCalculator
+from irwin.p_semiconductor_module.PIrwinCalculator import PIrwinCalculator
 
 
 class CalculationOperator(CallbackOperator):
@@ -9,7 +9,7 @@ class CalculationOperator(CallbackOperator):
         self.parameters = PCalculationParameters()
         # PCalculationParameters - постоянно обновляемая Entity, по коллбэкам от пользователя на GUI.
         # Эти Данные и будем использовать для рассчёта
-        self.calculator = PConcentrationCalculator()  # Это будет контроллер в MVC паттерне, уже передаём на MVC
+        self.calculator = PIrwinCalculator()  # Это будет контроллер в MVC паттерне, уже передаём на MVC
 
     def connect_callback(self, window):
         self.window = window
