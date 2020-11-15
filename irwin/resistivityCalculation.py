@@ -4,6 +4,7 @@ from fompy.models import DopedSemiconductor, conductivity
 
 RESISTIVITY_UNIT = unit('Ohm cm')
 CONCENTRATION_UNIT = unit('cm-3')
+CONDUCTIVITY_UNIT = unit('Ohm-1 cm-1')
 
 
 def mobility(mat, T, A, B):
