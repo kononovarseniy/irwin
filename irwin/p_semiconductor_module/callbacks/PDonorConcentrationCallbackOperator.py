@@ -1,12 +1,12 @@
 from irwin.CallbackOperator import CallbackOperator
 from irwin.config import GUIParameters
-from irwin.n_semiconductor_module.NCalculationParameters import NCalculationParameters
+from irwin.p_semiconductor_module.PInputData import PInputData
 
 
-class NDonorConcentrationCallbackOperator(CallbackOperator):
+class PDonorConcentrationCallbackOperator(CallbackOperator):
     def __init__(self):
         self.window = None
-        self.parameters = NCalculationParameters()
+        self.parameters = PInputData()
 
     def connect_callback(self, window):
         self.window = window
@@ -23,10 +23,10 @@ class NDonorConcentrationCallbackOperator(CallbackOperator):
             update_line_edit_func=self.update_donor_concentration_line_edit
         )
 
-        window.n_ConcentrationOrderspinBox.valueChanged.connect(self.update_order)
+        window.ConcentrationOrderspinBox.valueChanged.connect(self.update_order)
 
     def update_order(self):
-        self.parameters.donor_concentration_order = self.window.n_ConcentrationOrderspinBox.value()
+        self.parameters.donor_concentration_order = self.window.ConcentrationOrderspinBox.value()
         self.update_donor_concentration_line_edit()
 
     def update_donor_concentration_slider(self):

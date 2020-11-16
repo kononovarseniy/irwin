@@ -1,8 +1,8 @@
 from irwin.ApplicationModule import ApplicationModule
 from irwin.n_semiconductor_module.callbacks.NAcceptorEnergyCallbackOperator import NAcceptorEnergyCallbackOperator
 from irwin.n_semiconductor_module.callbacks.NCalculationCallbackOperator import NCalculationCallbackOperator
-from irwin.n_semiconductor_module.callbacks.NDonorConcentrationCallbackOperator import \
-    NDonorConcentrationCallbackOperator
+from irwin.p_semiconductor_module.callbacks.PDonorConcentrationCallbackOperator import \
+    PDonorConcentrationCallbackOperator
 from irwin.n_semiconductor_module.callbacks.NDonorEnergyCallbackOperator import NDonorEnergyCallbackOperator
 from irwin.n_semiconductor_module.callbacks.NMaterialCallbackOperator import NMaterialCallbackOperator
 from irwin.n_semiconductor_module.callbacks.NRadioButtonsCallbackOperator import NRadioButtonsCallbackOperator
@@ -16,7 +16,7 @@ class NSemiconductorModule(ApplicationModule):
             NDonorEnergyCallbackOperator(),
             NAcceptorEnergyCallbackOperator(),
             NMaterialCallbackOperator(),
-            NDonorConcentrationCallbackOperator(),
+            PDonorConcentrationCallbackOperator(),
             NRadioButtonsCallbackOperator(),
             NCalculationCallbackOperator()
         ]

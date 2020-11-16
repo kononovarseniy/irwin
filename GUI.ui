@@ -52,7 +52,7 @@
      <string>Material</string>
     </property>
    </widget>
-   <widget class="QLabel" name="AcceptorConcentrationlabel">
+   <widget class="QLabel" name="DonorConcentrationlabel">
     <property name="geometry">
      <rect>
       <x>400</x>
@@ -62,7 +62,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Acceptor Concentration</string>
+     <string>Donor Concentration</string>
     </property>
    </widget>
    <widget class="QLabel" name="DonorEnergylabel">
@@ -104,7 +104,7 @@
      <string>Temperature</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="AcceptorConcentrationlineEdit">
+   <widget class="QLineEdit" name="DonorConcentrationlineEdit">
     <property name="geometry">
      <rect>
       <x>870</x>
@@ -167,7 +167,7 @@
       <number>11</number>
      </property>
      <item>
-      <widget class="QSlider" name="AcceptorConcentrationhorizontalSlider">
+      <widget class="QSlider" name="DonorConcentrationhorizontalSlider">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
@@ -255,7 +255,7 @@
       <number>11</number>
      </property>
      <item>
-      <widget class="QSlider" name="DonorConcentrationhorizontalSlider">
+      <widget class="QSlider" name="AcceptorConcentrationhorizontalSlider">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
@@ -300,7 +300,7 @@
      <number>12</number>
     </property>
    </widget>
-   <widget class="QLineEdit" name="DonorConcentrationlineEdit">
+   <widget class="QLineEdit" name="AcceptorConcentrationlineEdit">
     <property name="geometry">
      <rect>
       <x>870</x>
@@ -423,7 +423,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLabel" name="AcceptorConcentrationlabel_2">
+   <widget class="QLabel" name="AcceptorConcentrationlabel">
     <property name="geometry">
      <rect>
       <x>400</x>
@@ -433,7 +433,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Donor Concentration</string>
+     <string>Acceptor Concentration</string>
     </property>
    </widget>
    <widget class="QGroupBox" name="groupBox">
@@ -1587,7 +1587,7 @@
      <x>0</x>
      <y>0</y>
      <width>1040</width>
-     <height>26</height>
+     <height>23</height>
     </rect>
    </property>
   </widget>

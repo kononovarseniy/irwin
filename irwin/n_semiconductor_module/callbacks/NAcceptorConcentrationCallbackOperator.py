@@ -1,12 +1,12 @@
 from irwin.CallbackOperator import CallbackOperator
 from irwin.config import GUIParameters
-from irwin.p_semiconductor_module.PCalculationParameters import PCalculationParameters
+from irwin.n_semiconductor_module.NInputData import NInputData
 
 
-class PAcceptorConcentrationCallbackOperator(CallbackOperator):
+class NAcceptorConcentrationCallbackOperator(CallbackOperator):
     def __init__(self):
         self.window = None
-        self.parameters = PCalculationParameters()
+        self.parameters = NInputData()
 
     def connect_callback(self, window):
         self.window = window
@@ -23,10 +23,10 @@ class PAcceptorConcentrationCallbackOperator(CallbackOperator):
             update_line_edit_func=self.update_acc_concentration_line_edit
         )
 
-        window.ConcentrationOrderspinBox.valueChanged.connect(self.update_order)
+        window.n_ConcentrationOrderspinBox.valueChanged.connect(self.update_order)
 
     def update_order(self):
-        self.parameters.acceptor_concentration_order = self.window.ConcentrationOrderspinBox.value()
+        self.parameters.acceptor_concentration_order = self.window.n_ConcentrationOrderspinBox.value()
         self.update_acc_concentration_line_edit()
 
     def update_acc_concentration_slider(self):

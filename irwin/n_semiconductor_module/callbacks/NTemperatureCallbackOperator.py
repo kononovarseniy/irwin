@@ -1,12 +1,12 @@
 from irwin.CallbackOperator import CallbackOperator
 from irwin.config import GUIParameters
-from irwin.n_semiconductor_module.NCalculationParameters import NCalculationParameters
+from irwin.n_semiconductor_module.NInputData import NInputData
 
 
 class NTemperatureCallbackOperator(CallbackOperator):
     def __init__(self):
         self.window = None
-        self.parameters = NCalculationParameters()
+        self.parameters = NInputData()
 
     def connect_callback(self, window):
         self.window = window

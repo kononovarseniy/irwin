@@ -1,6 +1,7 @@
-class ConcentrationData:
+class OutputData:
     def __init__(self):
         self.visualizers = []
+        self.Ns = []  # Concentrations
         self.rho = []  # Resistivity
         self.sigma = []  # Conductivity
 

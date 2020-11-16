@@ -1,10 +1,16 @@
 from fompy.units import unit
 
+from irwin.common.LogSpace import LogSpace
+
 
 class Units:
     RESISTIVITY = unit('Ohm cm')
     CONDUCTIVITY = unit('1 / Ohm cm')
     CONCENTRATION = unit('cm-3')
+
+
+class Ranges:
+    concentration_range = LogSpace(12, 20, 100)
 
 
 class GUIParameters:

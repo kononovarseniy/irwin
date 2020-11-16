@@ -1,5 +1,5 @@
 from irwin.CallbackOperator import CallbackOperator
-from irwin.p_semiconductor_module.PCalculationParameters import PCalculationParameters
+from irwin.p_semiconductor_module.PInputData import PInputData
 from irwin.materials import P_MATERIALS
 
 
@@ -7,7 +7,7 @@ class PMaterialCallbackOperator(CallbackOperator):
 
     def __init__(self):
         self.window = None
-        self.parameters = PCalculationParameters()
+        self.parameters = PInputData()
 
     def connect_callback(self, window):
         self.window = window

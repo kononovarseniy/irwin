@@ -1,5 +1,5 @@
 from irwin.CallbackOperator import CallbackOperator
-from irwin.p_semiconductor_module.PCalculationParameters import PCalculationParameters
+from irwin.p_semiconductor_module.PInputData import PInputData
 from irwin.p_semiconductor_module.PDataVisualiser import PDataVisualiser
 from irwin.p_semiconductor_module.PIrwinCalculator import PIrwinCalculator
 
@@ -7,8 +7,8 @@ from irwin.p_semiconductor_module.PIrwinCalculator import PIrwinCalculator
 class PCalculationCallbackOperator(CallbackOperator):
     def __init__(self):
         self.window = None
-        self.parameters = PCalculationParameters()
-        # PCalculationParameters - постоянно обновляемая Entity, по коллбэкам от пользователя на GUI.
+        self.parameters = PInputData()
+        # PInputData - постоянно обновляемая Entity, по коллбэкам от пользователя на GUI.
         # Эти Данные и будем использовать для рассчёта
         self.calculator = PIrwinCalculator()  # Это будет контроллер в MVC паттерне, уже передаём на MVC
 

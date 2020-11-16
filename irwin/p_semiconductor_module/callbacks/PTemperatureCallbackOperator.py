@@ -1,12 +1,12 @@
 from irwin.CallbackOperator import CallbackOperator
 from irwin.config import GUIParameters
-from irwin.p_semiconductor_module.PCalculationParameters import PCalculationParameters
+from irwin.p_semiconductor_module.PInputData import PInputData
 
 
 class PTemperatureCallbackOperator(CallbackOperator):
     def __init__(self):
         self.window = None
-        self.parameters = PCalculationParameters()
+        self.parameters = PInputData()
 
     def connect_callback(self, window):
         self.window = window
