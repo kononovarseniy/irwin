@@ -1,3 +1,5 @@
+from fompy.constants import eV
+
 from irwin.CallbackOperator import CallbackOperator
 from irwin.config import GUIParameters
 from irwin.p_semiconductor_module.PCalculationParameters import PCalculationParameters
@@ -39,4 +41,4 @@ class PAcceptorEnergyCallbackOperator(CallbackOperator):
         )
 
     def update_acceptor_energy(self, val):
-        self.parameters.acceptor_energy = val
+        self.parameters.acceptor_energy = val * eV

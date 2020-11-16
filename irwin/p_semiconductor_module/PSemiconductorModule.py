@@ -1,5 +1,5 @@
 from irwin.ApplicationModule import ApplicationModule
-from irwin.p_semiconductor_module.callbacks.DonorEnergyCallbackOperator import DonorEnergyCallbackOperator
+from irwin.p_semiconductor_module.callbacks.PDonorEnergyCallbackOperator import PDonorEnergyCallbackOperator
 from irwin.p_semiconductor_module.callbacks.PAcceptorConcentrationCallbackOperator import \
     PAcceptorConcentrationCallbackOperator
 from irwin.p_semiconductor_module.callbacks.PAcceptorEnergyCallbackOperator import PAcceptorEnergyCallbackOperator
@@ -14,7 +14,7 @@ class PSemiconductorModule(ApplicationModule):
     callback_operators = \
         [
             PTemperatureCallbackOperator(),
-            DonorEnergyCallbackOperator(),
+            PDonorEnergyCallbackOperator(),
             PMaterialCallbackOperator(),
             PCalculationCallbackOperator(),
             PRadioButtonsCallbackOperator(),

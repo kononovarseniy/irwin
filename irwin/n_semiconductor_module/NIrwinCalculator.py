@@ -1,11 +1,9 @@
 from sys import exc_info
 
 import numpy as np
-from fompy.constants import eV
 
 from irwin.common.IrwinCalculator import IrwinCalculator
 from irwin.common.calculations import conductivity
-from irwin.config import Units
 from irwin.n_semiconductor_module.NConcentrationData import NConcentrationData
 
 
@@ -27,13 +25,13 @@ class NIrwinCalculator(IrwinCalculator):
                               self.model.Na_max_order, self.model.points_number)
 
             sigma = conductivity(params.material, 'n',
-                                 params.donor_concentration, params.acceptor_energy * eV,
-                                 Nas, params.donor_energy * eV,
+                                 params.donor_concentration, params.acceptor_energy,
+                                 Nas, params.donor_energy,
                                  params.temperature)
 
-            self.model.Nas = Nas / Units.CONCENTRATION
-            self.model.rho = 1 / sigma / Units.RESISTIVITY
-            self.model.sigma = sigma / Units.CONDUCTIVITY
+            self.model.Nas = Nas
+            self.model.rho = 1 / sigma
+            self.model.sigma = sigma
             self.model.notify_visualizers()
         except:
             print(exc_info())
