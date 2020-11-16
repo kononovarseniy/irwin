@@ -1,6 +1,6 @@
 from irwin.CallbackOperator import CallbackOperator
 from irwin.NCalculationParameters import NCalculationParameters
-from irwin.materials import MATERIALS
+from irwin.materials import N_MATERIALS
 
 
 class NMaterialCallbackOperator(CallbackOperator):
@@ -17,5 +17,5 @@ class NMaterialCallbackOperator(CallbackOperator):
         arg = self.window.n_MaterialcomboBox.currentText()
         if len(arg):
             # TODO: Задать в GUIParameters Материал
-            self.parameters.material = MATERIALS[arg]
+            self.parameters.material = N_MATERIALS[arg]
             print(f'METHOD: set_material: {self.parameters.__repr__()}')

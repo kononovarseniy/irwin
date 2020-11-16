@@ -1,10 +1,12 @@
 from sys import exc_info
+from time import time
 
 import numpy as np
+from fompy.constants import eV
 
 from irwin.IrwinCalculator import IrwinCalculator
 from irwin.p_semiconductor_module.PConcentrationData import PConcentrationData
-from irwin.resistivityCalculation import *
+from irwin.calculations import *
 
 
 class PIrwinCalculator(IrwinCalculator):
@@ -16,13 +18,7 @@ class PIrwinCalculator(IrwinCalculator):
         return f'T={self.temperature}, AcceptorE={self.acceptor_energy}, DonorE={self.donor_energy},' \
                f'material={self.material}, acceptor concentration={self.acceptor_concentration}'
 
-    def calculate_concentration(self, *args, **kwargs):
-        self.temperature = kwargs['temperature']
-        self.acceptor_energy = kwargs['acceptor_energy']
-        self.donor_energy = kwargs['donor_energy']
-        self.material = kwargs['material']
-        self.acceptor_concentration = kwargs['acceptor_concentration']
-
+    def calculate_concentration(self, params):
         # Вот теперь приступаем к алгоритму
         # Расчёт для случая Na >> Nd
         # Nd физиксировано и меняется в пределах между 10^12 и 10^20
@@ -32,13 +28,15 @@ class PIrwinCalculator(IrwinCalculator):
             # Prepare x array
             Nds = np.logspace(self.model.Nd_min_order,
                               self.model.Nd_max_order, self.model.points_number)
-            f = np.vectorize(resistivity)
-            ys = f(self.material, Nds,
-                   self.acceptor_energy * eV, self.acceptor_concentration, self.donor_energy * eV, self.temperature)
+
+            sigma = conductivity(params.material, 'p',
+                                 Nds, params.acceptor_energy * eV,
+                                 params.acceptor_concentration, params.donor_energy * eV,
+                                 params.temperature)
 
             self.model.Nds = Nds / CONCENTRATION_UNIT
-            self.model.rho = ys / RESISTIVITY_UNIT
-            self.model.sigma = 1 / ys / CONDUCTIVITY_UNIT
+            self.model.rho = 1 / sigma / RESISTIVITY_UNIT
+            self.model.sigma = sigma / CONDUCTIVITY_UNIT
             self.model.notify_visualizers()
         except:
             print(exc_info())

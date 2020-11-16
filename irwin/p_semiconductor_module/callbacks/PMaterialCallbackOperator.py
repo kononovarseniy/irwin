@@ -1,9 +1,9 @@
 from irwin.CallbackOperator import CallbackOperator
 from irwin.PCalculationParameters import PCalculationParameters
-from irwin.materials import MATERIALS
+from irwin.materials import P_MATERIALS
 
 
-class PSemiconductorMaterialCallbackOperator(CallbackOperator):
+class PMaterialCallbackOperator(CallbackOperator):
 
     def __init__(self):
         self.window = None
@@ -17,5 +17,5 @@ class PSemiconductorMaterialCallbackOperator(CallbackOperator):
         arg = self.window.MaterialcomboBox.currentText()
         if len(arg):
             # TODO: Задать в GUIParameters Материал
-            self.parameters.material = MATERIALS[arg]
+            self.parameters.material = P_MATERIALS[arg]
             print(f'METHOD: set_material: {self.parameters.__repr__()}')

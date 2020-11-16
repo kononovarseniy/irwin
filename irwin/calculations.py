@@ -1,6 +1,7 @@
+import numpy as np
+from fompy.models import DopedSemiconductor
+from fompy import models
 from fompy.units import unit
-from fompy.constants import eV
-from fompy.models import DopedSemiconductor, conductivity
 
 RESISTIVITY_UNIT = unit('Ohm cm')
 CONCENTRATION_UNIT = unit('cm-3')
@@ -20,11 +21,12 @@ def mobility(mat, T, A, B):
     return A / (T32 + B * (Nd + Na) / T32)
 
 
-def resistivity(mat, Na, Ea, Nd, Ed, T):
-    """Вычисляет сопротивление по концентрациям в функции irwin написано тоже самое но *немного* оптимальнее"""
-    A = mat.mobility_const_a
-    B = mat.mobility_const_b
+@np.vectorize
+def conductivity(mat, type, Na, Ea, Nd, Ed, T):
+    """Вычисляет проводимость по концентрациям в функции"""
+    a = mat.mobility_const_a
+    b = mat.mobility_const_b
     sem = DopedSemiconductor(mat.semiconductor, Na, Ea, Nd, Ed)
-    mob = mobility(sem, T, A, B)
-    return 1 / conductivity(sem.p_concentration(T=T), mobility(sem, T, A, B))
-    # return 1 / conductivity(sem.n_concentration(T=T), mob, sem.p_concentration(T=T), mob)
+    n = sem.p_concentration(T=T) if type == 'p' else sem.n_concentration(T=T)
+    mob = mobility(sem, T, a, b)
+    return models.conductivity(n, mob)
