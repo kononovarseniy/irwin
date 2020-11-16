@@ -1,6 +1,6 @@
 from irwin.CallbackOperator import CallbackOperator
 from irwin.n_semiconductor_module.NCalculationParameters import NCalculationParameters
-from irwin.common.materials import N_MATERIALS
+from irwin.materials import N_MATERIALS
 
 
 class NMaterialCallbackOperator(CallbackOperator):
