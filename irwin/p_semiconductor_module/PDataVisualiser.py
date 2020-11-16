@@ -15,8 +15,8 @@ class PDataVisualiser(Visualiser):
                              labels=['Donor concentrations', 'Resistivity'])
 
     def plot_conductivity(self):
-        self.PlotCanvas.plot(self._model.Nds, self._model.rho, title='Irwin Curve',
-                             labels=['Donor concentrations', 'Resistivity'])
+        self.PlotCanvas.plot(self._model.Nds, self._model.sigma, title='Irwin Curve',
+                             labels=['Donor concentrations', 'Conductivity'])
 
     #  overriden
 

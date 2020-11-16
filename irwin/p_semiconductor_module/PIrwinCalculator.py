@@ -37,7 +37,7 @@ class PIrwinCalculator(IrwinCalculator):
 
             self.Model.Nds = Nds / CONCENTRATION_UNIT
             self.Model.rho = ys / RESISTIVITY_UNIT
-            self.Model.sigma = 1 / ys
+            self.Model.sigma = 1 / ys / CONDUCTIVITY_UNIT
             self.Model.notify_observers()
         except:
             print(exc_info())
