@@ -1,8 +1,7 @@
 from irwin.PlotCanvas import PlotCanvas
-from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 
 
-class PPlotCanvas(PlotCanvas, FigureCanvas):
+class PPlotCanvas(PlotCanvas):
     _state = {}
 
     def __new__(self, parent=None):
