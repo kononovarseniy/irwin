@@ -1,12 +1,12 @@
 from sys import exc_info
-from time import time
 
 import numpy as np
 from fompy.constants import eV
 
-from irwin.IrwinCalculator import IrwinCalculator
+from irwin.common.IrwinCalculator import IrwinCalculator
+from irwin.common.calculations import conductivity
+from irwin.config import Units
 from irwin.p_semiconductor_module.PConcentrationData import PConcentrationData
-from irwin.calculations import *
 
 
 class PIrwinCalculator(IrwinCalculator):
@@ -34,9 +34,9 @@ class PIrwinCalculator(IrwinCalculator):
                                  params.acceptor_concentration, params.donor_energy * eV,
                                  params.temperature)
 
-            self.model.Nds = Nds / CONCENTRATION_UNIT
-            self.model.rho = 1 / sigma / RESISTIVITY_UNIT
-            self.model.sigma = sigma / CONDUCTIVITY_UNIT
+            self.model.Nds = Nds / Units.CONCENTRATION
+            self.model.rho = 1 / sigma / Units.RESISTIVITY
+            self.model.sigma = sigma / Units.CONDUCTIVITY
             self.model.notify_visualizers()
         except:
             print(exc_info())

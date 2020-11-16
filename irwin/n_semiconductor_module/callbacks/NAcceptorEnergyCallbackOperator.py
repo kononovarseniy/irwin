@@ -1,6 +1,6 @@
 from irwin.CallbackOperator import CallbackOperator
-from irwin.GUIParameters import GUIParameters
-from irwin.NCalculationParameters import NCalculationParameters
+from irwin.config import GUIParameters
+from irwin.n_semiconductor_module.NCalculationParameters import NCalculationParameters
 
 
 class NAcceptorEnergyCallbackOperator(CallbackOperator):

@@ -1,5 +1,3 @@
-
-
 class CalculationParameters:
     def __init__(self):
         self._material = None

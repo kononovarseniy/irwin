@@ -5,7 +5,7 @@ from fompy.materials import Si
 from fompy.models import DopedSemiconductor, conductivity
 from fompy.units import unit
 
-from irwin.materials import Material
+from irwin.common.materials import Material
 
 MOBILITY_UNIT = unit('cm^2 / V s')
 RESISTIVITY_UNIT = unit('Ohm cm')

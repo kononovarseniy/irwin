@@ -1,5 +1,5 @@
 from irwin.CallbackOperator import CallbackOperator
-from irwin.NCalculationParameters import NCalculationParameters
+from irwin.n_semiconductor_module.NCalculationParameters import NCalculationParameters
 from irwin.n_semiconductor_module.NDataVisualiser import NDataVisualiser
 from irwin.n_semiconductor_module.NIrwinCalculator import NIrwinCalculator
 

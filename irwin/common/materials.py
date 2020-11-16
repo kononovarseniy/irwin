@@ -1,9 +1,6 @@
 from fompy.materials import Si, Ge
 from fompy.units import unit
 
-MOBILITY_UNIT = unit('cm^2 / V s')
-RESISTIVITY_UNIT = unit('Ohm cm')
-CONCENTRATION_UNIT = unit('cm-3')
 A_UNIT = unit('cm^2 K^3/2 / V s')
 B_UNIT = unit('K^3')
 

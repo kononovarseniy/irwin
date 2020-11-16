@@ -1,4 +1,4 @@
-from irwin.ConcentrationData import ConcentrationData
+from irwin.common.ConcentrationData import ConcentrationData
 
 
 class PConcentrationData(ConcentrationData):

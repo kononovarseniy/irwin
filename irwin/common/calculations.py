@@ -1,11 +1,6 @@
 import numpy as np
-from fompy.models import DopedSemiconductor
 from fompy import models
-from fompy.units import unit
-
-RESISTIVITY_UNIT = unit('Ohm cm')
-CONCENTRATION_UNIT = unit('cm-3')
-CONDUCTIVITY_UNIT = unit('Ohm-1 cm-1')
+from fompy.models import DopedSemiconductor
 
 
 def mobility(mat, T, A, B):

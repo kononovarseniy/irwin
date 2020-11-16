@@ -1,5 +1,5 @@
 from irwin.CallbackOperator import CallbackOperator
-from irwin.NCalculationParameters import NCalculationParameters
+from irwin.n_semiconductor_module.NCalculationParameters import NCalculationParameters
 
 
 class NRadioButtonsCallbackOperator(CallbackOperator):

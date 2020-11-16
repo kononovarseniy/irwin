@@ -1,5 +1,5 @@
 from irwin.singleton import singleton
-from irwin.CalculationParameters import CalculationParameters
+from irwin.common.CalculationParameters import CalculationParameters
 
 
 @singleton

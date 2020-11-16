@@ -3,8 +3,9 @@ from sys import exc_info
 import numpy as np
 from fompy.constants import eV
 
-from irwin.IrwinCalculator import IrwinCalculator
-from irwin.calculations import *
+from irwin.common.IrwinCalculator import IrwinCalculator
+from irwin.common.calculations import conductivity
+from irwin.config import Units
 from irwin.n_semiconductor_module.NConcentrationData import NConcentrationData
 
 
@@ -30,9 +31,9 @@ class NIrwinCalculator(IrwinCalculator):
                                  Nas, params.donor_energy * eV,
                                  params.temperature)
 
-            self.model.Nas = Nas / CONCENTRATION_UNIT
-            self.model.rho = 1 / sigma / RESISTIVITY_UNIT
-            self.model.sigma = sigma / CONDUCTIVITY_UNIT
+            self.model.Nas = Nas / Units.CONCENTRATION
+            self.model.rho = 1 / sigma / Units.RESISTIVITY
+            self.model.sigma = sigma / Units.CONDUCTIVITY
             self.model.notify_visualizers()
         except:
             print(exc_info())

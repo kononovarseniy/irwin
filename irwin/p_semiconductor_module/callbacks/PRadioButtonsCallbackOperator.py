@@ -1,5 +1,5 @@
 from irwin.CallbackOperator import CallbackOperator
-from irwin.PCalculationParameters import PCalculationParameters
+from irwin.p_semiconductor_module.PCalculationParameters import PCalculationParameters
 
 
 class PRadioButtonsCallbackOperator(CallbackOperator):

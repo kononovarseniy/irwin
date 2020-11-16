@@ -1,3 +1,12 @@
+from fompy.units import unit
+
+
+class Units:
+    RESISTIVITY = unit('Ohm cm')
+    CONDUCTIVITY = unit('1 / Ohm cm')
+    CONCENTRATION = unit('cm-3')
+
+
 class GUIParameters:
     TemperatureCalcConstant = 100
     TemperatureSliderMin = 0.0
@@ -13,8 +22,6 @@ class GUIParameters:
     DonorEnergySliderMin = DonorEnergySliderMin * DonorEnergyCalcConstant
     DonorEnergySliderMax = DonorEnergySliderMax * DonorEnergyCalcConstant
 
-
-
     AcceptorEnergyCalcConstant = 10000
     AcceptorEnergySliderMin = 0.0
     AcceptorEnergySliderMax = 1.0  # electron-Volt
@@ -22,16 +29,12 @@ class GUIParameters:
     AcceptorEnergySliderMin = AcceptorEnergySliderMin * AcceptorEnergyCalcConstant
     AcceptorEnergySliderMax = AcceptorEnergySliderMax * AcceptorEnergyCalcConstant
 
-
     AcceptorConcentrationCalcConstant = 100
     AcceptorConcentrationSliderMin = 1.0 * AcceptorConcentrationCalcConstant
     AcceptorConcentrationSliderMax = 9.0 * AcceptorConcentrationCalcConstant  # ХЗ зачем нужна такая константа (10)
     AcceptorConcentrationLineEditAccuracy = 2
 
-
     DonorConcentrationCalcConstant = 100
     DonorConcentrationSliderMin = 1.0 * DonorConcentrationCalcConstant
     DonorConcentrationSliderMax = 9.0 * DonorConcentrationCalcConstant  # ХЗ зачем нужна такая константа (10)
     DonorConcentrationLineEditAccuracy = 2
-
-
