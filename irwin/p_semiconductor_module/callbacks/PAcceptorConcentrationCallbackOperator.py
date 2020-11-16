@@ -1,9 +1,9 @@
-from irwin.PCalculationParameters import PCalculationParameters
 from irwin.CallbackOperator import CallbackOperator
 from irwin.GUIParameters import GUIParameters
+from irwin.PCalculationParameters import PCalculationParameters
 
 
-class AcceptorConcentrationCallbackOperator(CallbackOperator):
+class PAcceptorConcentrationCallbackOperator(CallbackOperator):
     def __init__(self):
         self.window = None
         self.parameters = PCalculationParameters()
@@ -36,7 +36,6 @@ class AcceptorConcentrationCallbackOperator(CallbackOperator):
             calc_constant=GUIParameters.AcceptorConcentrationCalcConstant
         )
 
-
     def update_acc_concentration_line_edit(self):
         value_to_set = self.window.AcceptorConcentrationhorizontalSlider.value()
         value_to_set /= GUIParameters.AcceptorConcentrationCalcConstant
@@ -46,7 +45,6 @@ class AcceptorConcentrationCallbackOperator(CallbackOperator):
         scientific_notation = "{:.2e}".format(acceptor_concentration)
         text_to_set = str(scientific_notation)
         self.window.AcceptorConcentrationlineEdit.setText(text_to_set)
-
 
     def update_acc_concentration_mantissa(self, val):
         self.parameters.acceptor_concentration_mantissa = val

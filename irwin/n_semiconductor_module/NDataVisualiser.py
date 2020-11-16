@@ -1,5 +1,5 @@
 from irwin.NCalculationParameters import NCalculationParameters
-from irwin.p_semiconductor_module.Visualiser import Visualiser
+from irwin.Visualiser import Visualiser
 
 
 class NDataVisualiser(Visualiser):

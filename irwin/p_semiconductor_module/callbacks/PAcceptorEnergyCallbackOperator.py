@@ -1,9 +1,9 @@
-from irwin.PCalculationParameters import PCalculationParameters
 from irwin.CallbackOperator import CallbackOperator
 from irwin.GUIParameters import GUIParameters
+from irwin.PCalculationParameters import PCalculationParameters
 
 
-class AcceptorEnergyCallBackOperator(CallbackOperator):
+class PAcceptorEnergyCallbackOperator(CallbackOperator):
     def __init__(self):
         self.window = None
         self.parameters = PCalculationParameters()
@@ -30,7 +30,6 @@ class AcceptorEnergyCallBackOperator(CallbackOperator):
             calc_constant=GUIParameters.AcceptorEnergyCalcConstant
         )
 
-
     def update_energy_line_edit(self):
         self.update_line_edit(
             line_edit=self.window.AcceptorEnergylineEdit,
@@ -38,7 +37,6 @@ class AcceptorEnergyCallBackOperator(CallbackOperator):
             calc_constant=GUIParameters.AcceptorEnergyCalcConstant,
             update_model_func=self.update_acceptor_energy
         )
-
 
     def update_acceptor_energy(self, val):
         self.parameters.acceptor_energy = val

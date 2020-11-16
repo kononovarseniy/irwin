@@ -4,7 +4,7 @@ from irwin.n_semiconductor_module.NDataVisualiser import NDataVisualiser
 from irwin.n_semiconductor_module.NIrwinCalculator import NIrwinCalculator
 
 
-class n_CalculationCallBackOperator(CallbackOperator):
+class NCalculationCallbackOperator(CallbackOperator):
     def __init__(self):
         self.window = None
         self.parameters = NCalculationParameters()
@@ -12,7 +12,7 @@ class n_CalculationCallBackOperator(CallbackOperator):
 
     def connect_callback(self, window):
         self.window = window
-        NDataVisualiser(self.calculator.Model, self.window.nTypePlot)
+        NDataVisualiser(self.calculator.model, self.window.nTypePlot)
         window.n_CalculatepushButton.clicked.connect(self.calc_irwin_curve)
 
     def calc_irwin_curve(self):

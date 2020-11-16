@@ -3,8 +3,7 @@ from abc import ABC, abstractmethod
 
 class IrwinCalculator(ABC):
     def __init__(self):
-        self.Model = None  # Модель данных для отображения на графике
-        self.View = None
+        self.model = None  # Модель данных для отображения на графике
 
         self.temperature = None
         self.acceptor_energy = None
@@ -12,7 +11,6 @@ class IrwinCalculator(ABC):
         self.material = None
 
         self.init_model()
-        self.init_view()
 
     @abstractmethod
     def calculate_concentration(self, *args, **kwargs):
@@ -20,8 +18,4 @@ class IrwinCalculator(ABC):
 
     @abstractmethod
     def init_model(self):
-        pass
-
-    @abstractmethod
-    def init_view(self):
         pass

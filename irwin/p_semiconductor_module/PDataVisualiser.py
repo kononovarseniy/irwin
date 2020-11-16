@@ -1,5 +1,5 @@
 from irwin.PCalculationParameters import PCalculationParameters
-from irwin.p_semiconductor_module.Visualiser import Visualiser
+from irwin.Visualiser import Visualiser
 
 
 class PDataVisualiser(Visualiser):

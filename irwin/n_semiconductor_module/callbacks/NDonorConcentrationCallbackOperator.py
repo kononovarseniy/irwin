@@ -1,9 +1,9 @@
-from irwin.NCalculationParameters import NCalculationParameters
 from irwin.CallbackOperator import CallbackOperator
 from irwin.GUIParameters import GUIParameters
+from irwin.NCalculationParameters import NCalculationParameters
 
 
-class DonorConcentrationCallBackOperator(CallbackOperator):
+class NDonorConcentrationCallbackOperator(CallbackOperator):
     def __init__(self):
         self.window = None
         self.parameters = NCalculationParameters()
@@ -36,7 +36,6 @@ class DonorConcentrationCallBackOperator(CallbackOperator):
             calc_constant=GUIParameters.DonorConcentrationCalcConstant
         )
 
-
     def update_donor_concentration_line_edit(self):
         value_to_set = self.window.DonorConcentrationhorizontalSlider.value()
         value_to_set /= GUIParameters.DonorConcentrationCalcConstant
@@ -46,7 +45,6 @@ class DonorConcentrationCallBackOperator(CallbackOperator):
         scientific_notation = "{:.2e}".format(donor_concentration)
         text_to_set = str(scientific_notation)
         self.window.DonorConcentrationlineEdit.setText(text_to_set)
-
 
     def update_donor_concentration_mantissa(self, val):
         self.parameters.donor_concentration_mantissa = val

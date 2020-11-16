@@ -1,24 +1,26 @@
 from irwin.ApplicationModule import ApplicationModule
-from irwin.p_semiconductor_module.callbacks.CalculationOperator import CalculationOperator
-from irwin.p_semiconductor_module.callbacks.DonorEnergyCallBackOperator import DonorEnergyCallbackOperator
-from irwin.p_semiconductor_module.callbacks.SemiconductorMaterialOperator import SemiconductorMaterialOperator
-from irwin.p_semiconductor_module.callbacks.TemperatureCallBackOperator import TemperatureCallbackOperator
-from irwin.p_semiconductor_module.callbacks.RadioButtonsCallBackOperator import RadioButtonsCallBackOperator
-from irwin.p_semiconductor_module.callbacks.AcceptorConcentrationCallBackOperator import AcceptorConcentrationCallbackOperator
-from irwin.p_semiconductor_module.callbacks.AcceptorEnergyCallBackOperator import AcceptorEnergyCallBackOperator
+from irwin.p_semiconductor_module.callbacks.DonorEnergyCallbackOperator import DonorEnergyCallbackOperator
+from irwin.p_semiconductor_module.callbacks.PAcceptorConcentrationCallbackOperator import \
+    PAcceptorConcentrationCallbackOperator
+from irwin.p_semiconductor_module.callbacks.PAcceptorEnergyCallbackOperator import PAcceptorEnergyCallbackOperator
+from irwin.p_semiconductor_module.callbacks.PCalculationCallbackOperator import PCalculationCallbackOperator
+from irwin.p_semiconductor_module.callbacks.PRadioButtonsCallbackOperator import PRadioButtonsCallbackOperator
+from irwin.p_semiconductor_module.callbacks.PSemiconductorMaterialCallbackOperator import \
+    PSemiconductorMaterialCallbackOperator
+from irwin.p_semiconductor_module.callbacks.PTemperatureCallbackOperator import PTemperatureCallbackOperator
+
 
 class PSemiconductorModule(ApplicationModule):
     callback_operators = \
         [
-            TemperatureCallbackOperator(),
+            PTemperatureCallbackOperator(),
             DonorEnergyCallbackOperator(),
-            SemiconductorMaterialOperator(),
-            CalculationOperator(),
-            RadioButtonsCallBackOperator(),
-            AcceptorConcentrationCallbackOperator(),
-            AcceptorEnergyCallBackOperator()
+            PSemiconductorMaterialCallbackOperator(),
+            PCalculationCallbackOperator(),
+            PRadioButtonsCallbackOperator(),
+            PAcceptorConcentrationCallbackOperator(),
+            PAcceptorEnergyCallbackOperator()
         ]
 
     def __init__(self):
         self.window = None
-

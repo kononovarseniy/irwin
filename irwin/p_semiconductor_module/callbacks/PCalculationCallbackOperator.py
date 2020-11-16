@@ -1,10 +1,10 @@
-from irwin.PCalculationParameters import PCalculationParameters
 from irwin.CallbackOperator import CallbackOperator
+from irwin.PCalculationParameters import PCalculationParameters
 from irwin.p_semiconductor_module.PDataVisualiser import PDataVisualiser
 from irwin.p_semiconductor_module.PIrwinCalculator import PIrwinCalculator
 
 
-class CalculationOperator(CallbackOperator):
+class PCalculationCallbackOperator(CallbackOperator):
     def __init__(self):
         self.window = None
         self.parameters = PCalculationParameters()
@@ -14,7 +14,7 @@ class CalculationOperator(CallbackOperator):
 
     def connect_callback(self, window):
         self.window = window
-        PDataVisualiser(self.calculator.Model, self.window.pTypePlot)  # Visualizer registers itself
+        PDataVisualiser(self.calculator.model, self.window.pTypePlot)  # Visualizer registers itself
         window.CalculatepushButton.clicked.connect(self.calculate_concentration)
 
     def calculate_concentration(self):

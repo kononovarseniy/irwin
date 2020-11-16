@@ -1,9 +1,9 @@
-from irwin.PCalculationParameters import PCalculationParameters
 from irwin.CallbackOperator import CallbackOperator
+from irwin.PCalculationParameters import PCalculationParameters
 from irwin.materials import MATERIALS
 
 
-class SemiconductorMaterialOperator(CallbackOperator):
+class PSemiconductorMaterialCallbackOperator(CallbackOperator):
 
     def __init__(self):
         self.window = None

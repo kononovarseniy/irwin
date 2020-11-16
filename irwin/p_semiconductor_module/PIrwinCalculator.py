@@ -30,23 +30,20 @@ class PIrwinCalculator(IrwinCalculator):
 
         try:
             # Prepare x array
-            Nds = np.logspace(self.Model.Nd_min_order,
-                              self.Model.Nd_max_order, self.Model.points_number)
+            Nds = np.logspace(self.model.Nd_min_order,
+                              self.model.Nd_max_order, self.model.points_number)
             f = np.vectorize(resistivity)
             ys = f(self.material, Nds,
                    self.acceptor_energy * eV, self.acceptor_concentration, self.donor_energy * eV, self.temperature)
 
-            self.Model.Nds = Nds / CONCENTRATION_UNIT
-            self.Model.rho = ys / RESISTIVITY_UNIT
-            self.Model.sigma = 1 / ys / CONDUCTIVITY_UNIT
-            self.Model.notify_visualizers()
+            self.model.Nds = Nds / CONCENTRATION_UNIT
+            self.model.rho = ys / RESISTIVITY_UNIT
+            self.model.sigma = 1 / ys / CONDUCTIVITY_UNIT
+            self.model.notify_visualizers()
         except:
             print(exc_info())
 
         return
 
     def init_model(self):
-        self.Model = PConcentrationData()
-
-    def init_view(self):
-        pass  # TODO: remove base method
+        self.model = PConcentrationData()

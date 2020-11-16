@@ -1,9 +1,9 @@
-from irwin.NCalculationParameters import NCalculationParameters
 from irwin.CallbackOperator import CallbackOperator
+from irwin.NCalculationParameters import NCalculationParameters
 from irwin.materials import MATERIALS
 
 
-class n_MaterialCallBackOperator(CallbackOperator):
+class NMaterialCallbackOperator(CallbackOperator):
 
     def __init__(self):
         self.window = None

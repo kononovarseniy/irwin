@@ -24,7 +24,4 @@ class NIrwinCalculator(IrwinCalculator):
         #  РАСЧЁТ ДЛЯ Nd >> Na
 
     def init_model(self):
-        self.Model = NConcentrationData()
-
-    def init_view(self):
-        pass
+        self.model = NConcentrationData()

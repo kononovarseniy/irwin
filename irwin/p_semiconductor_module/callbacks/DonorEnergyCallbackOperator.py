@@ -1,6 +1,6 @@
-from irwin.PCalculationParameters import PCalculationParameters
 from irwin.CallbackOperator import CallbackOperator
 from irwin.GUIParameters import GUIParameters
+from irwin.PCalculationParameters import PCalculationParameters
 
 
 class DonorEnergyCallbackOperator(CallbackOperator):
@@ -30,7 +30,6 @@ class DonorEnergyCallbackOperator(CallbackOperator):
             calc_constant=GUIParameters.DonorEnergyCalcConstant
         )
 
-
     def update_energy_line_edit(self):
         self.update_line_edit(
             line_edit=self.window.DonorEnergylineEdit,
@@ -38,7 +37,6 @@ class DonorEnergyCallbackOperator(CallbackOperator):
             calc_constant=GUIParameters.DonorEnergyCalcConstant,
             update_model_func=self.update_donor_energy
         )
-
 
     def update_donor_energy(self, val):
         self.parameters.donor_energy = val
