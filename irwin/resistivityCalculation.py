@@ -26,5 +26,5 @@ def resistivity(mat, Na, Ea, Nd, Ed, T):
     B = mat.mobility_const_b
     sem = DopedSemiconductor(mat.semiconductor, Na, Ea, Nd, Ed)
     mob = mobility(sem, T, A, B)
-    return 1 / conductivity(0, 0, sem.p_concentration(T=T), mobility(sem, T, A, B))
+    return 1 / conductivity(sem.p_concentration(T=T), mobility(sem, T, A, B))
     # return 1 / conductivity(sem.n_concentration(T=T), mob, sem.p_concentration(T=T), mob)

@@ -1,22 +1,19 @@
-from irwin.p_semiconductor_module.Visualiser import Visualiser
-import matplotlib.pyplot as plt
 from irwin.PCalculationParameters import PCalculationParameters
-from irwin.p_semiconductor_module.PPlotCanvas import PPlotCanvas
+from irwin.p_semiconductor_module.Visualiser import Visualiser
 
 
 class PDataVisualiser(Visualiser):
-    def __init__(self, controller, model):
-        super().__init__(controller, model)
-        self.PlotCanvas = PPlotCanvas()
+    def __init__(self, model, plot_canvas):
+        super().__init__(model, plot_canvas)
         self._plotting_parameters = PCalculationParameters()
 
     def plot_resistivity(self):
-        self.PlotCanvas.plot(self._model.Nds, self._model.rho, title='Irwin Curve',
-                             labels=['Donor concentrations', 'Resistivity'])
+        self._plot_canvas.plot(self._model.Nds, self._model.rho, title='Irwin Curve',
+                               labels=['Donor concentrations', 'Resistivity'])
 
     def plot_conductivity(self):
-        self.PlotCanvas.plot(self._model.Nds, self._model.sigma, title='Irwin Curve',
-                             labels=['Donor concentrations', 'Conductivity'])
+        self._plot_canvas.plot(self._model.Nds, self._model.sigma, title='Irwin Curve',
+                               labels=['Donor concentrations', 'Conductivity'])
 
     #  overriden
 

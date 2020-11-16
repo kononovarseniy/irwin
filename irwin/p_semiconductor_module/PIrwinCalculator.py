@@ -1,8 +1,9 @@
+from sys import exc_info
+
+import numpy as np
+
 from irwin.IrwinCalculator import IrwinCalculator
 from irwin.p_semiconductor_module.PConcentrationData import PConcentrationData
-from irwin.p_semiconductor_module.PDataVisualiser import PDataVisualiser
-from sys import exc_info
-import numpy as np
 from irwin.resistivityCalculation import *
 
 
@@ -38,7 +39,7 @@ class PIrwinCalculator(IrwinCalculator):
             self.Model.Nds = Nds / CONCENTRATION_UNIT
             self.Model.rho = ys / RESISTIVITY_UNIT
             self.Model.sigma = 1 / ys / CONDUCTIVITY_UNIT
-            self.Model.notify_observers()
+            self.Model.notify_visualizers()
         except:
             print(exc_info())
 
@@ -48,4 +49,4 @@ class PIrwinCalculator(IrwinCalculator):
         self.Model = PConcentrationData()
 
     def init_view(self):
-        self.View = PDataVisualiser(self, self.Model)
+        pass  # TODO: remove base method

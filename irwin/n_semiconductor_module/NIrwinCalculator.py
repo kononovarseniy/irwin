@@ -1,6 +1,5 @@
 from irwin.IrwinCalculator import IrwinCalculator
 from irwin.n_semiconductor_module.NConcentrationData import NConcentrationData
-from irwin.n_semiconductor_module.NDataVisualiser import NDataVisualiser
 
 
 class NIrwinCalculator(IrwinCalculator):
@@ -28,4 +27,4 @@ class NIrwinCalculator(IrwinCalculator):
         self.Model = NConcentrationData()
 
     def init_view(self):
-        self.View = NDataVisualiser(self, self.Model)
+        pass
