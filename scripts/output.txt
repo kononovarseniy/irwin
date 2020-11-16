@@ -1,0 +1,109 @@
+==========
+Handling file Si_n: Si electrons (Si_n)
+==========
+Si electrons (Si_n): 1
+    A = 4.197290e+09 CGS = 1.400030e+07 cm^2 K^3/2 / V s
+    B = 1.751000e-10 K^3
+Si electrons (Si_n): 2
+    A = 2.805340e+09 CGS = 9.357371e+06 cm^2 K^3/2 / V s
+    B = 8.919703e-11 K^3
+Si electrons (Si_n): 3
+    A = 1.655669e+09 CGS = 5.522578e+06 cm^2 K^3/2 / V s
+    B = 1.784352e-12 K^3
+Si electrons (Si_n): 4
+    A = 1.028250e+09 CGS = 3.429788e+06 cm^2 K^3/2 / V s
+    B = 1.400251e-12 K^3
+Si electrons (Si_n): average constants
+    A = 1.341960e+09 CGS = 4.476183e+06 cm^2 K^3/2 / V s
+    B = 1.592302e-12 K^3
+
+==========
+Handling file Si_p: Si holes (Si_p)
+==========
+Si holes (Si_p): 1
+    A = 3.677352e+09 CGS = 1.226602e+07 cm^2 K^3/2 / V s
+    B = -1.193958e-10 K^3
+Si holes (Si_p): 2
+    A = 2.863252e+09 CGS = 9.550541e+06 cm^2 K^3/2 / V s
+    B = 5.480083e-12 K^3
+Si holes (Si_p): 3
+    A = 9.336734e+08 CGS = 3.114321e+06 cm^2 K^3/2 / V s
+    B = 1.339297e-12 K^3
+Si holes (Si_p): 4
+    A = 5.136628e+08 CGS = 1.713351e+06 cm^2 K^3/2 / V s
+    B = 1.106718e-12 K^3
+Si holes (Si_p): average constants
+    A = 7.236681e+08 CGS = 2.413836e+06 cm^2 K^3/2 / V s
+    B = 1.223007e-12 K^3
+
+==========
+Handling file Ge_n: Ge electrons (Ge_n)
+==========
+Ge electrons (Ge_n): 1
+    A = 8.699603e+09 CGS = 2.901802e+07 cm^2 K^3/2 / V s
+    B = 5.384156e-09 K^3
+Ge electrons (Ge_n): 2
+    A = 7.062520e+09 CGS = 2.355744e+07 cm^2 K^3/2 / V s
+    B = 4.326361e-11 K^3
+Ge electrons (Ge_n): 3
+    A = 4.680650e+09 CGS = 1.561258e+07 cm^2 K^3/2 / V s
+    B = 1.120458e-11 K^3
+Ge electrons (Ge_n): 4
+    A = 2.412731e+09 CGS = 8.047801e+06 cm^2 K^3/2 / V s
+    B = 5.530227e-13 K^3
+Ge electrons (Ge_n): 5
+    A = 1.599593e+09 CGS = 5.335534e+06 cm^2 K^3/2 / V s
+    B = 1.034901e-12 K^3
+Ge electrons (Ge_n): 6
+    A = 2.244357e+09 CGS = 7.486180e+06 cm^2 K^3/2 / V s
+    B = 7.370856e-12 K^3
+Ge electrons (Ge_n): 7
+    A = 3.169966e+08 CGS = 1.057360e+06 cm^2 K^3/2 / V s
+    B = 8.483930e-13 K^3
+Ge electrons (Ge_n): average constants
+    A = 3.052808e+09 CGS = 1.018281e+07 cm^2 K^3/2 / V s
+    B = 1.071256e-11 K^3
+
+==========
+Handling file Ge_p: Ge holes (Ge_p)
+==========
+Ge holes (Ge_p): 1
+    A = 9.065463e+09 CGS = 3.023837e+07 cm^2 K^3/2 / V s
+    B = 4.235367e-07 K^3
+Ge holes (Ge_p): 2
+    A = 6.363581e+09 CGS = 2.122609e+07 cm^2 K^3/2 / V s
+    B = -1.388528e-09 K^3
+Ge holes (Ge_p): 3
+    A = 4.654917e+09 CGS = 1.552674e+07 cm^2 K^3/2 / V s
+    B = 2.574805e-11 K^3
+Ge holes (Ge_p): 4
+    A = 2.307282e+09 CGS = 7.696072e+06 cm^2 K^3/2 / V s
+    B = 2.019798e-11 K^3
+Ge holes (Ge_p): 5
+    A = 1.940540e+09 CGS = 6.472782e+06 cm^2 K^3/2 / V s
+    B = 1.368346e-11 K^3
+Ge holes (Ge_p): 6
+    A = 8.372562e+08 CGS = 2.792716e+06 cm^2 K^3/2 / V s
+    B = 3.306189e-12 K^3
+Ge holes (Ge_p): 7
+    A = 1.942447e+08 CGS = 6.479142e+05 cm^2 K^3/2 / V s
+    B = 1.080565e-12 K^3
+Ge holes (Ge_p): average constants
+    A = 1.319831e+09 CGS = 4.402371e+06 cm^2 K^3/2 / V s
+    B = 9.567049e-12 K^3
+
+==========
+Handling file GaAs_n: GaAs electrons (GaAs_n)
+==========
+GaAs electrons (GaAs_n): bottom
+    A = 1.097807e+10 CGS = 3.661797e+07 cm^2 K^3/2 / V s
+    B = 6.687813e-11 K^3
+GaAs electrons (GaAs_n): middle
+    A = 1.800636e+10 CGS = 6.006126e+07 cm^2 K^3/2 / V s
+    B = 1.470335e-10 K^3
+GaAs electrons (GaAs_n): top
+    A = 4.267187e+10 CGS = 1.423345e+08 cm^2 K^3/2 / V s
+    B = 1.221612e-11 K^3
+GaAs electrons (GaAs_n): average constants
+    A = 1.449222e+10 CGS = 4.833961e+07 cm^2 K^3/2 / V s
+    B = 1.069558e-10 K^3

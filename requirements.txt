@@ -1,4 +1,4 @@
-fti-fompy==0.1.1
+fti-fompy==0.2.0
 scipy
 numpy
 matplotlib
