@@ -1,7 +1,7 @@
 class InputData:
-    def __init__(self):
+    def __init__(self, conductivity_type):
+        self.type = conductivity_type
         self.material = None
-
         self.plot_resistivity = True
         self.plot_conductivity = False
 

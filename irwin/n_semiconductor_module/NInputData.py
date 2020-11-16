@@ -6,8 +6,7 @@ from irwin.singleton import singleton
 @singleton
 class NInputData(InputData):
     def __init__(self):
-        super().__init__()
-
+        super().__init__('n')
         self.donor_concentration_range = Ranges.concentration_range
         self.acceptor_concentration_mantissa = 0.0  # значащая часть
         self.acceptor_concentration_order = 0  # порядок величины

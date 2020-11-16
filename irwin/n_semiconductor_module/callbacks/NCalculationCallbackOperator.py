@@ -1,14 +1,14 @@
 from irwin.CallbackOperator import CallbackOperator
-from irwin.n_semiconductor_module.NInputData import NInputData
+from irwin.common.IrwinCalculator import IrwinCalculator
 from irwin.n_semiconductor_module.NDataVisualiser import NDataVisualiser
-from irwin.n_semiconductor_module.NIrwinCalculator import NIrwinCalculator
+from irwin.n_semiconductor_module.NInputData import NInputData
 
 
 class NCalculationCallbackOperator(CallbackOperator):
     def __init__(self):
         self.window = None
         self.parameters = NInputData()
-        self.calculator = NIrwinCalculator()
+        self.calculator = IrwinCalculator()
 
     def connect_callback(self, window):
         self.window = window
