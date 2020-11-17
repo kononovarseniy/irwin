@@ -1,10 +1,12 @@
 from PyQt5.QtWidgets import QSizePolicy
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
+from matplotlib import rcParams
 
 
 class PlotCanvas(FigureCanvas):
-    def __init__(self, parent=None,  width=3.8, height=3.5, dpi=100):
+    def __init__(self, parent=None,  width=3.8, height=3.55, dpi=100):
+        rcParams.update({'figure.constrained_layout.use': True})
         self.fig = Figure(figsize=(width, height), dpi=dpi)
         FigureCanvas.__init__(self, self.fig)
 
