@@ -22,4 +22,5 @@ class NSemiconductorModule(ApplicationModule):
         ]
 
     def __init__(self):
+        super().__init__()
         self.window = None
