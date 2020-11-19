@@ -12,8 +12,8 @@ class NCalculationCallbackOperator(CallbackOperator):
 
     def connect_callback(self, window):
         self.window = window
-        NDataVisualiser(self.calculator.model, self.window.nTypePlot)
-        window.n_CalculatepushButton.clicked.connect(self.calc_irwin_curve)
+        NDataVisualiser(self.calculator.model, self.window.n_type_plot)
+        window.n_calculate_button.clicked.connect(self.calc_irwin_curve)
 
     def calc_irwin_curve(self):
         print('Recalculating the n concentration')

@@ -12,8 +12,8 @@ class PCalculationCallbackOperator(CallbackOperator):
 
     def connect_callback(self, window):
         self.window = window
-        PDataVisualiser(self.calculator.model, self.window.pTypePlot)  # Visualiser registers itself
-        window.CalculatepushButton.clicked.connect(self.calculate_concentration)
+        PDataVisualiser(self.calculator.model, self.window.p_type_plot)  # Visualiser registers itself
+        window.p_calculate_button.clicked.connect(self.calculate_concentration)
 
     def calculate_concentration(self):
         print('Recalculating the p concentration')
