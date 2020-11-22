@@ -7,6 +7,7 @@ from irwin.n_semiconductor_module.callbacks.NDonorEnergyCallbackOperator import 
 from irwin.n_semiconductor_module.callbacks.NMaterialCallbackOperator import NMaterialCallbackOperator
 from irwin.n_semiconductor_module.callbacks.NRadioButtonsCallbackOperator import NRadioButtonsCallbackOperator
 from irwin.n_semiconductor_module.callbacks.NTemperatureCallbackOperator import NTemperatureCallbackOperator
+from irwin.n_semiconductor_module.callbacks.NAutoFillOperator import NAutoFillOperator
 
 
 class NSemiconductorModule(ApplicationModule):
@@ -18,7 +19,8 @@ class NSemiconductorModule(ApplicationModule):
             NMaterialCallbackOperator(),
             NAcceptorConcentrationCallbackOperator(),
             NRadioButtonsCallbackOperator(),
-            NCalculationCallbackOperator()
+            NCalculationCallbackOperator(),
+            NAutoFillOperator("..\\AutoFillConfigs\\NTypeConfigs\\NTypeConfigs.xlsx")
         ]
 
     def __init__(self):

@@ -21,7 +21,7 @@ class PSemiconductorModule(ApplicationModule):
             PRadioButtonsCallbackOperator(),
             PDonorConcentrationCallbackOperator(),
             PAcceptorEnergyCallbackOperator(),
-            PAutoFillOperator()
+            PAutoFillOperator("..\\AutoFillConfigs\\PTypeConfigs\\PTypeConfigs.xlsx")
         ]
 
     def __init__(self):
