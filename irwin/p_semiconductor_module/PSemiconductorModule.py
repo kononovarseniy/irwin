@@ -8,6 +8,7 @@ from irwin.p_semiconductor_module.callbacks.PMaterialCallbackOperator import \
     PMaterialCallbackOperator
 from irwin.p_semiconductor_module.callbacks.PRadioButtonsCallbackOperator import PRadioButtonsCallbackOperator
 from irwin.p_semiconductor_module.callbacks.PTemperatureCallbackOperator import PTemperatureCallbackOperator
+from irwin.p_semiconductor_module.callbacks.PAutoFillOperator import PAutoFillOperator
 
 
 class PSemiconductorModule(ApplicationModule):
@@ -19,7 +20,8 @@ class PSemiconductorModule(ApplicationModule):
             PCalculationCallbackOperator(),
             PRadioButtonsCallbackOperator(),
             PDonorConcentrationCallbackOperator(),
-            PAcceptorEnergyCallbackOperator()
+            PAcceptorEnergyCallbackOperator(),
+            PAutoFillOperator()
         ]
 
     def __init__(self):
