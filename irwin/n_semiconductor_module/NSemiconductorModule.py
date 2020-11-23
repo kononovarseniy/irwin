@@ -1,4 +1,5 @@
 from irwin.ApplicationModule import ApplicationModule
+from irwin.config import n_defaults
 from irwin.n_semiconductor_module.callbacks.NAcceptorConcentrationCallbackOperator import \
     NAcceptorConcentrationCallbackOperator
 from irwin.n_semiconductor_module.callbacks.NAcceptorEnergyCallbackOperator import NAcceptorEnergyCallbackOperator
@@ -7,6 +8,7 @@ from irwin.n_semiconductor_module.callbacks.NDonorEnergyCallbackOperator import 
 from irwin.n_semiconductor_module.callbacks.NMaterialCallbackOperator import NMaterialCallbackOperator
 from irwin.n_semiconductor_module.callbacks.NRadioButtonsCallbackOperator import NRadioButtonsCallbackOperator
 from irwin.n_semiconductor_module.callbacks.NTemperatureCallbackOperator import NTemperatureCallbackOperator
+from irwin.n_semiconductor_module.callbacks.NAutoFillOperator import NAutoFillOperator
 
 
 class NSemiconductorModule(ApplicationModule):
@@ -18,7 +20,8 @@ class NSemiconductorModule(ApplicationModule):
             NMaterialCallbackOperator(),
             NAcceptorConcentrationCallbackOperator(),
             NRadioButtonsCallbackOperator(),
-            NCalculationCallbackOperator()
+            NCalculationCallbackOperator(),
+            NAutoFillOperator(n_defaults)
         ]
 
     def __init__(self):
