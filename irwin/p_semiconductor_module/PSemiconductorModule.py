@@ -1,4 +1,5 @@
 from irwin.ApplicationModule import ApplicationModule
+from irwin.config import p_defaults
 from irwin.p_semiconductor_module.callbacks.PAcceptorEnergyCallbackOperator import PAcceptorEnergyCallbackOperator
 from irwin.p_semiconductor_module.callbacks.PCalculationCallbackOperator import PCalculationCallbackOperator
 from irwin.p_semiconductor_module.callbacks.PDonorConcentrationCallbackOperator import \
@@ -21,7 +22,7 @@ class PSemiconductorModule(ApplicationModule):
             PRadioButtonsCallbackOperator(),
             PDonorConcentrationCallbackOperator(),
             PAcceptorEnergyCallbackOperator(),
-            PAutoFillOperator("..\\AutoFillConfigs\\PTypeConfigs\\PTypeConfigs.xlsx")
+            PAutoFillOperator(p_defaults)
         ]
 
     def __init__(self):

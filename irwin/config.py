@@ -1,3 +1,5 @@
+from dataclasses import dataclass
+
 from fompy.units import unit
 
 from irwin.common.LogSpace import LogSpace
@@ -11,6 +13,36 @@ class Units:
 
 class Ranges:
     concentration_range = LogSpace(12, 20, 100)
+
+
+class DefaultValues:
+    def __init__(self, material, temperature, donor_energy, acceptor_energy, concentration_mantissa,
+                 concentration_order):
+        self.material = material
+        self.temperature = temperature
+        self.donor_energy = donor_energy
+        self.acceptor_energy = acceptor_energy
+        self.concentration_mantissa = concentration_mantissa
+        self.concentration_order = concentration_order
+
+
+n_defaults = DefaultValues(
+    material='Si',
+    temperature=250,
+    donor_energy=0.75,
+    acceptor_energy=0.4,
+    concentration_mantissa=3.48,
+    concentration_order=2
+)
+
+p_defaults = DefaultValues(
+    material='Si',
+    temperature=300,
+    donor_energy=0.75,
+    acceptor_energy=0.4,
+    concentration_mantissa=3.48,
+    concentration_order=2
+)
 
 
 class GUIParameters:
