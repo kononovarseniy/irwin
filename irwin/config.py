@@ -1,5 +1,3 @@
-from dataclasses import dataclass
-
 from fompy.units import unit
 
 from irwin.common.LogSpace import LogSpace

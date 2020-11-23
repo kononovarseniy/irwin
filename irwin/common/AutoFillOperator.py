@@ -1,7 +1,6 @@
-import pandas as pd
-from irwin.CallbackOperator import CallbackOperator
+from abc import abstractmethod
 
-from abc import ABC, abstractmethod
+from irwin.CallbackOperator import CallbackOperator
 
 
 class AutoFillOperator(CallbackOperator):
