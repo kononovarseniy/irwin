@@ -11,7 +11,8 @@ class NMaterialCallbackOperator(CallbackOperator):
 
     def connect_callback(self, window):
         self.window = window
-        window.n_MaterialcomboBox.currentIndexChanged.connect(self.set_material)
+        window.n_MaterialcomboBox.currentIndexChanged.connect(
+            self.set_material)
 
     def set_material(self):
         arg = self.window.n_MaterialcomboBox.currentText()
