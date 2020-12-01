@@ -19,7 +19,7 @@ class NSemiconductorModule(ApplicationModule):
             NDonorEnergyCallbackOperator(NInputData()),
             NAcceptorEnergyCallbackOperator(NInputData()),
             NMaterialCallbackOperator(),
-            NAcceptorConcentrationCallbackOperator(),
+            NAcceptorConcentrationCallbackOperator(NInputData()),
             NRadioButtonsCallbackOperator(),
             NCalculationCallbackOperator(output_filename=N_TYPE_OUTPUT_FILE),
             NAutoFillOperator(n_defaults),

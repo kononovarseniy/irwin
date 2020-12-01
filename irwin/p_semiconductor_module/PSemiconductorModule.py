@@ -21,7 +21,7 @@ class PSemiconductorModule(ApplicationModule):
             PMaterialCallbackOperator(),
             PCalculationCallbackOperator(output_filename=P_TYPE_OUTPUT_FILE),
             PRadioButtonsCallbackOperator(),
-            PDonorConcentrationCallbackOperator(),
+            PDonorConcentrationCallbackOperator(PInputData()),
             PAcceptorEnergyCallbackOperator(PInputData()),
             PAutoFillOperator(p_defaults),
         ]

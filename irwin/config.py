@@ -19,14 +19,12 @@ class Ranges:
 
 
 class DefaultValues:
-    def __init__(self, material, temperature, donor_energy, acceptor_energy, concentration_mantissa,
-                 concentration_order):
+    def __init__(self, material, temperature, donor_energy, acceptor_energy, second_concentration):
         self.material = material
         self.temperature = temperature
         self.donor_energy = donor_energy
         self.acceptor_energy = acceptor_energy
-        self.concentration_mantissa = concentration_mantissa
-        self.concentration_order = concentration_order
+        self.second_concentration = second_concentration
 
 
 n_defaults = DefaultValues(
@@ -34,8 +32,7 @@ n_defaults = DefaultValues(
     temperature=250,
     donor_energy=0.75,
     acceptor_energy=0.4,
-    concentration_mantissa=3.48,
-    concentration_order=2
+    second_concentration=3.48e2
 )
 
 p_defaults = DefaultValues(
@@ -43,8 +40,7 @@ p_defaults = DefaultValues(
     temperature=300,
     donor_energy=0.75,
     acceptor_energy=0.4,
-    concentration_mantissa=3.48,
-    concentration_order=2
+    second_concentration=3.48e2
 )
 
 
@@ -61,12 +57,6 @@ class GUIParameters:
     acceptor_energy_max = 1.0  # electron-Volt
     acceptor_energy_accuracy = 2
 
-    AcceptorConcentrationCalcConstant = 100
-    AcceptorConcentrationSliderMin = 1.0 * AcceptorConcentrationCalcConstant
-    AcceptorConcentrationSliderMax = 9.0 * AcceptorConcentrationCalcConstant  # ХЗ зачем нужна такая константа (10)
-    AcceptorConcentrationLineEditAccuracy = 2
-
-    DonorConcentrationCalcConstant = 100
-    DonorConcentrationSliderMin = 1.0 * DonorConcentrationCalcConstant
-    DonorConcentrationSliderMax = 9.0 * DonorConcentrationCalcConstant  # ХЗ зачем нужна такая константа (10)
-    DonorConcentrationLineEditAccuracy = 2
+    second_concentration_min_order = 0
+    second_concentration_max_order = 15
+    second_concentration_accuracy = 2

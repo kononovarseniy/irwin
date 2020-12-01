@@ -1,50 +1,23 @@
-from irwin.CallbackOperator import CallbackOperator
-from irwin.config import GUIParameters
-from irwin.p_semiconductor_module.PInputData import PInputData
+from irwin.common.ScientificValueInputOperator import ScientificValueInputOperator
+from irwin.config import GUIParameters, p_defaults
 
 
-class PDonorConcentrationCallbackOperator(CallbackOperator):
-    def __init__(self):
-        self.window = None
-        self.parameters = PInputData()
+class PDonorConcentrationCallbackOperator(ScientificValueInputOperator):
+    def __init__(self, input_data):
+        super().__init__(
+            GUIParameters.second_concentration_accuracy,
+            GUIParameters.second_concentration_min_order,
+            GUIParameters.second_concentration_max_order,
+            p_defaults.second_concentration
+        )
+        self.input_data = input_data
 
     def connect_callback(self, window):
-        self.window = window
-
-        self.setup_callback_and_synchronize_slider(
-            validator_min=GUIParameters.DonorConcentrationSliderMin,
-            validator_max=GUIParameters.DonorConcentrationSliderMax,
-            validator_accuracy=GUIParameters.DonorConcentrationLineEditAccuracy,
-            line_edit=self.window.DonorConcentrationlineEdit,
-            slider_min=GUIParameters.DonorConcentrationSliderMin,
-            slider_max=GUIParameters.DonorConcentrationSliderMax,
-            slider=self.window.DonorConcentrationhorizontalSlider,
-            update_slider_func=self.update_donor_concentration_slider,
-            update_line_edit_func=self.update_donor_concentration_line_edit
+        self.connect_callback_implementation(
+            window.p_donor_concentration_slider,
+            window.p_donor_concentration_line_edit,
+            window.p_donor_concentration_spinbox
         )
 
-        window.ConcentrationOrderspinBox.valueChanged.connect(self.update_order)
-
-    def update_order(self):
-        self.parameters.donor_concentration_order = self.window.ConcentrationOrderspinBox.value()
-        self.update_donor_concentration_line_edit()
-
-    def update_donor_concentration_slider(self):
-        self.update_slider(
-            line_edit=self.window.DonorConcentrationlineEdit,
-            slider=self.window.DonorConcentrationhorizontalSlider,
-            calc_constant=GUIParameters.DonorConcentrationCalcConstant
-        )
-
-    def update_donor_concentration_line_edit(self):
-        value_to_set = self.window.DonorConcentrationhorizontalSlider.value()
-        value_to_set /= GUIParameters.DonorConcentrationCalcConstant
-        self.update_donor_concentration_mantissa(value_to_set)
-
-        donor_concentration = self.parameters.donor_concentration
-        scientific_notation = "{:.2e}".format(donor_concentration)
-        text_to_set = str(scientific_notation)
-        self.window.DonorConcentrationlineEdit.setText(text_to_set)
-
-    def update_donor_concentration_mantissa(self, val):
-        self.parameters.donor_concentration_mantissa = val
+    def value_changed(self, value):
+        self.input_data.donor_concentration = value

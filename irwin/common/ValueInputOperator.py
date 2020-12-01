@@ -27,6 +27,7 @@ class ValueInputOperator(CallbackOperator, ABC):
 
         self.set_slider_value(self.default)
         self.set_line_edit_value(self.default)
+        self.value_changed(self.default)
 
         self.slider.valueChanged.connect(self.slider_value_changed)
         self.line_edit.textEdited.connect(self.text_changed)
