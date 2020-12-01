@@ -550,7 +550,7 @@ class Ui_MainWindow(object):
         self.n_DonorEnergylineEdit.setMinimumSize(QtCore.QSize(70, 0))
         self.n_DonorEnergylineEdit.setMaximumSize(QtCore.QSize(70, 16777215))
         self.n_DonorEnergylineEdit.setObjectName("n_DonorEnergylineEdit")
-        self.n_input_gпrid_layout.addWidget(self.n_DonorEnergylineEdit, 2, 3, 1, 1)
+        self.n_input_grid_layout.addWidget(self.n_DonorEnergylineEdit, 2, 3, 1, 1)
         self.n_AcceptorEnergylineEdit = QtWidgets.QLineEdit(self.n_type_frame)
         self.n_AcceptorEnergylineEdit.setMinimumSize(QtCore.QSize(70, 0))
         self.n_AcceptorEnergylineEdit.setMaximumSize(QtCore.QSize(70, 16777215))
