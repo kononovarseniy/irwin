@@ -25,4 +25,8 @@ __pycache__/
 .idea/misc.xml
 .idea/other.xml
 
+# Excel docs with results output
+irwin/N type irwin curve.csv
+irwin/P type irwin curve.csv
+
 
