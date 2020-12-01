@@ -4,19 +4,12 @@ from irwin.n_semiconductor_module.NSemiconductorModule import NSemiconductorModu
 
 
 class ApplicationManager:
-
     def __init__(self):
-        self.application_modules = [
-            PSemiconductorModule(),
-            NSemiconductorModule()
-        ]
-
         self.gui = MainWindow()
-        self.run_all_modules()
-
-    def run_all_modules(self):
-        for module in self.application_modules:
-            module.run(self.gui)
+        self.application_modules = [
+            PSemiconductorModule(self.gui),
+            NSemiconductorModule(self.gui)
+        ]
 
     def show_gui(self):
         self.gui.show()

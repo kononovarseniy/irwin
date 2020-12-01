@@ -13,9 +13,9 @@ from irwin.p_semiconductor_module.callbacks.PTemperatureCallbackOperator import 
 
 
 class PSemiconductorModule(ApplicationModule):
-    input_data = InputData('p')
-    callback_operators = \
-        [
+    def create_operators(self):
+        input_data = InputData('p')
+        return [
             PTemperatureCallbackOperator(input_data),
             PDonorEnergyCallbackOperator(input_data),
             PMaterialCallbackOperator(input_data),
@@ -24,7 +24,3 @@ class PSemiconductorModule(ApplicationModule):
             PDonorConcentrationCallbackOperator(input_data),
             PAcceptorEnergyCallbackOperator(input_data)
         ]
-
-    def __init__(self):
-        super().__init__()
-        self.window = None

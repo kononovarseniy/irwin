@@ -12,9 +12,9 @@ from irwin.n_semiconductor_module.callbacks.NTemperatureCallbackOperator import 
 
 
 class NSemiconductorModule(ApplicationModule):
-    input_data = InputData('n')
-    callback_operators = \
-        [
+    def create_operators(self):
+        input_data = InputData('n')
+        return [
             NTemperatureCallbackOperator(input_data),
             NDonorEnergyCallbackOperator(input_data),
             NAcceptorEnergyCallbackOperator(input_data),
@@ -23,7 +23,3 @@ class NSemiconductorModule(ApplicationModule):
             NRadioButtonsCallbackOperator(input_data),
             NCalculationCallbackOperator(input_data, output_filename=N_TYPE_OUTPUT_FILE)
         ]
-
-    def __init__(self):
-        super().__init__()
-        self.window = None

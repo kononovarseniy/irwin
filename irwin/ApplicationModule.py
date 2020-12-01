@@ -1,17 +1,12 @@
-from abc import ABC
+from abc import ABC, abstractmethod
 
 
 class ApplicationModule(ABC):
+    def __init__(self, gui):
+        self.operators = self.create_operators()  # Save them in the field to protect against garbage collection
+        for operator in self.operators:
+            operator.connect_callback(gui)
 
-    def __init__(self):
-        self.main_window = None  # a class inherited from QMainWindow
-
-    def run(self, main_window):
-        self.main_window = main_window
-        self.connect_all_callbacks()
-
-    def connect_all_callbacks(self):
-        for conn in self.callback_operators:
-            conn.connect_callback(self.main_window)  # TODO: код в родителя
-
-
+    @abstractmethod
+    def create_operators(self):
+        pass
