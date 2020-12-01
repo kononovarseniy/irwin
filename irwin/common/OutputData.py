@@ -1,6 +1,3 @@
-from irwin.singleton import singleton
-
-#@singleton
 class OutputData:
     def __init__(self):
         self.visualizers = []

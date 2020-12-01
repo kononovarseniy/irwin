@@ -33,28 +33,28 @@ def conductivity(mat, type, Na, Ea, Nd, Ed, T):
 
 class IrwinCalculator:
     def __init__(self):
-        self.model = OutputData()
+        self.output_data = OutputData()
 
-    def calculate_concentration(self, params):
-        print(f'Calculator begins calc with parameters {params}')
+    def calculate_concentration(self, input_data):
+        print(f'Calculator begins calc with parameters {input_data}')
 
-        if params.type == 'n':
-            Na = params.acceptor_concentration
-            Nd = Ns = params.donor_concentration_range.get_array()
+        if input_data.type == 'n':
+            Na = input_data.acceptor_concentration
+            Nd = Ns = input_data.donor_concentration_range.get_array()
         else:
-            Na = Ns = params.acceptor_concentration_range.get_array()
-            Nd = params.donor_concentration
+            Na = Ns = input_data.acceptor_concentration_range.get_array()
+            Nd = input_data.donor_concentration
 
         try:
-            sigma = conductivity(params.material, params.type,
-                                 Na, params.acceptor_energy,
-                                 Nd, params.donor_energy,
-                                 params.temperature)
+            sigma = conductivity(input_data.material, input_data.type,
+                                 Na, input_data.acceptor_energy,
+                                 Nd, input_data.donor_energy,
+                                 input_data.temperature)
 
-            self.model.Ns = Ns
-            self.model.rho = 1 / sigma
-            self.model.sigma = sigma
-            self.model.notify_visualizers()
+            self.output_data.Ns = Ns
+            self.output_data.rho = 1 / sigma
+            self.output_data.sigma = sigma
+            self.output_data.notify_visualizers()
         except:
             print(exc_info())
 

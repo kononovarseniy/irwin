@@ -14,15 +14,16 @@ from irwin.p_semiconductor_module.callbacks.PTemperatureCallbackOperator import 
 
 
 class PSemiconductorModule(ApplicationModule):
+    input_data = PInputData()
     callback_operators = \
         [
-            PTemperatureCallbackOperator(PInputData()),
-            PDonorEnergyCallbackOperator(PInputData()),
-            PMaterialCallbackOperator(),
-            PCalculationCallbackOperator(output_filename=P_TYPE_OUTPUT_FILE),
-            PRadioButtonsCallbackOperator(),
-            PDonorConcentrationCallbackOperator(PInputData()),
-            PAcceptorEnergyCallbackOperator(PInputData()),
+            PTemperatureCallbackOperator(input_data),
+            PDonorEnergyCallbackOperator(input_data),
+            PMaterialCallbackOperator(input_data),
+            PCalculationCallbackOperator(input_data, output_filename=P_TYPE_OUTPUT_FILE),
+            PRadioButtonsCallbackOperator(input_data),
+            PDonorConcentrationCallbackOperator(input_data),
+            PAcceptorEnergyCallbackOperator(input_data),
             PAutoFillOperator(p_defaults),
         ]
 

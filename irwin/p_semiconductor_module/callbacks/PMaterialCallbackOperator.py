@@ -1,13 +1,12 @@
 from irwin.CallbackOperator import CallbackOperator
-from irwin.p_semiconductor_module.PInputData import PInputData
 from irwin.materials import P_MATERIALS
 
 
 class PMaterialCallbackOperator(CallbackOperator):
 
-    def __init__(self):
+    def __init__(self, input_data):
         self.window = None
-        self.parameters = PInputData()
+        self.input_data = input_data
 
     def connect_callback(self, window):
         self.window = window
@@ -17,5 +16,5 @@ class PMaterialCallbackOperator(CallbackOperator):
         arg = self.window.MaterialcomboBox.currentText()
         if len(arg):
             # TODO: Задать в GUIParameters Материал
-            self.parameters.material = P_MATERIALS[arg]
-            print(f'METHOD: set_material: {self.parameters.__repr__()}')
+            self.input_data.material = P_MATERIALS[arg]
+            print(f'METHOD: set_material: {self.input_data.__repr__()}')

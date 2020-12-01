@@ -13,15 +13,16 @@ from irwin.n_semiconductor_module.callbacks.NTemperatureCallbackOperator import 
 
 
 class NSemiconductorModule(ApplicationModule):
+    input_data = NInputData()
     callback_operators = \
         [
-            NTemperatureCallbackOperator(NInputData()),
-            NDonorEnergyCallbackOperator(NInputData()),
-            NAcceptorEnergyCallbackOperator(NInputData()),
-            NMaterialCallbackOperator(),
-            NAcceptorConcentrationCallbackOperator(NInputData()),
-            NRadioButtonsCallbackOperator(),
-            NCalculationCallbackOperator(output_filename=N_TYPE_OUTPUT_FILE),
+            NTemperatureCallbackOperator(input_data),
+            NDonorEnergyCallbackOperator(input_data),
+            NAcceptorEnergyCallbackOperator(input_data),
+            NMaterialCallbackOperator(input_data),
+            NAcceptorConcentrationCallbackOperator(input_data),
+            NRadioButtonsCallbackOperator(input_data),
+            NCalculationCallbackOperator(input_data, output_filename=N_TYPE_OUTPUT_FILE),
             NAutoFillOperator(n_defaults),
         ]
 

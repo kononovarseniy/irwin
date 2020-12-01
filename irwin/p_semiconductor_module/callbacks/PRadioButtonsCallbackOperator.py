@@ -1,11 +1,10 @@
 from irwin.CallbackOperator import CallbackOperator
-from irwin.p_semiconductor_module.PInputData import PInputData
 
 
 class PRadioButtonsCallbackOperator(CallbackOperator):
-    def __init__(self):
+    def __init__(self, input_data):
         self.window = None
-        self.parameters = PInputData()
+        self.input_data = input_data
 
     def connect_callback(self, window):
         self.window = window
@@ -15,8 +14,8 @@ class PRadioButtonsCallbackOperator(CallbackOperator):
 
     def set_plotting_parameter(self):
         if self.window.ResistivityradioButton.isChecked():
-            self.parameters.plot_resistivity = True
-            self.parameters.plot_conductivity = False
+            self.input_data.plot_resistivity = True
+            self.input_data.plot_conductivity = False
         elif self.window.ConductivityradioButton.isChecked():
-            self.parameters.plot_conductivity = True
-            self.parameters.plot_resistivity = False
+            self.input_data.plot_conductivity = True
+            self.input_data.plot_resistivity = False

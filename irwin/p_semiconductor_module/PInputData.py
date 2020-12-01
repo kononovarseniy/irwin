@@ -1,9 +1,7 @@
 from irwin.common.InputData import InputData
 from irwin.config import Ranges
-from irwin.singleton import singleton
 
 
-@singleton
 class PInputData(InputData):
     def __init__(self):
         super().__init__('p')
