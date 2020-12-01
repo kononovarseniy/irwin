@@ -1,20 +1,11 @@
-from irwin.CallbackOperator import CallbackOperator
+from irwin.common.MaterialInputOperator import MaterialInputOperator
+from irwin.config import p_defaults
 from irwin.materials import P_MATERIALS
 
 
-class PMaterialCallbackOperator(CallbackOperator):
-
+class PMaterialCallbackOperator(MaterialInputOperator):
     def __init__(self, input_data):
-        self.window = None
-        self.input_data = input_data
+        super().__init__(input_data, P_MATERIALS, p_defaults.material)
 
     def connect_callback(self, window):
-        self.window = window
-        window.MaterialcomboBox.currentIndexChanged.connect(self.set_material)
-
-    def set_material(self):
-        arg = self.window.MaterialcomboBox.currentText()
-        if len(arg):
-            # TODO: Задать в GUIParameters Материал
-            self.input_data.material = P_MATERIALS[arg]
-            print(f'METHOD: set_material: {self.input_data.__repr__()}')
+        self.connect_callback_implementation(window.p_material_combobox)
