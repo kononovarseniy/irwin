@@ -19,7 +19,7 @@ class PlotCanvas(FigureCanvas):
             self, QSizePolicy.Expanding, QSizePolicy.Expanding)
         FigureCanvas.updateGeometry(self)
 
-    def plot(self, x, y, labels=['', '']):
+    def plot(self, x, y, labels=('', '')):
         self.axes.cla()
         self.axes.grid(True, which='both', axis='both')
         self.axes.set_xscale('log')
