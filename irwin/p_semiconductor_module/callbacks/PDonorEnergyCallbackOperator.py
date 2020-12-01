@@ -1,44 +1,24 @@
 from fompy.constants import eV
 
-from irwin.CallbackOperator import CallbackOperator
+from irwin.common.ValueInputOperator import ValueInputOperator
 from irwin.config import GUIParameters
-from irwin.p_semiconductor_module.PInputData import PInputData
+from irwin.config import p_defaults
 
 
-class PDonorEnergyCallbackOperator(CallbackOperator):
-    def __init__(self):
-        self.window = None
-        self.parameters = PInputData()
+class PDonorEnergyCallbackOperator(ValueInputOperator):
+    def __init__(self, input_data):
+        super().__init__(
+            GUIParameters.donor_energy_min,
+            GUIParameters.donor_energy_max,
+            GUIParameters.donor_energy_accuracy,
+            p_defaults.donor_energy
+        )
+        self.input_data = input_data
 
     def connect_callback(self, window):
-        self.window = window
+        self.connect_callback_implementation(
+            window.p_donor_energy_slider,
+            window.p_donor_energy_line_edit)
 
-        self.setup_callback_and_synchronize_slider(
-            validator_min=GUIParameters.DonorEnergySliderMin,
-            validator_max=GUIParameters.DonorEnergySliderMax,
-            validator_accuracy=GUIParameters.DonorEnergyLineEditAccuracy,
-            line_edit=self.window.DonorEnergylineEdit,
-            slider_min=GUIParameters.DonorEnergySliderMin,
-            slider_max=GUIParameters.DonorEnergySliderMax,
-            slider=self.window.DonorEnergyhorizontalSlider,
-            update_slider_func=self.update_energy_slider,
-            update_line_edit_func=self.update_energy_line_edit
-        )
-
-    def update_energy_slider(self):
-        self.update_slider(
-            line_edit=self.window.DonorEnergylineEdit,
-            slider=self.window.DonorEnergyhorizontalSlider,
-            calc_constant=GUIParameters.DonorEnergyCalcConstant
-        )
-
-    def update_energy_line_edit(self):
-        self.update_line_edit(
-            line_edit=self.window.DonorEnergylineEdit,
-            slider=self.window.DonorEnergyhorizontalSlider,
-            calc_constant=GUIParameters.DonorEnergyCalcConstant,
-            update_model_func=self.update_donor_energy
-        )
-
-    def update_donor_energy(self, val):
-        self.parameters.donor_energy = val * eV
+    def value_changed(self, value):
+        self.input_data.donor_energy = value * eV

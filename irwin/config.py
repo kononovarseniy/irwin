@@ -49,26 +49,17 @@ p_defaults = DefaultValues(
 
 
 class GUIParameters:
-    TemperatureCalcConstant = 100
-    TemperatureSliderMin = 0.0
-    TemperatureSliderMax = 500.0  # Kelvin
-    TemperatureLineEditAccuracy = 2
-    TemperatureSliderMin = TemperatureSliderMin * TemperatureCalcConstant  # These calculations for correct
-    TemperatureSliderMax = TemperatureSliderMax * TemperatureCalcConstant
+    temperature_min = 0.0
+    temperature_max = 500.0  # Kelvin
+    temperature_accuracy = 1
 
-    DonorEnergyCalcConstant = 10000
-    DonorEnergySliderMin = 0.0
-    DonorEnergySliderMax = 2.0  # electron-Volt
-    DonorEnergyLineEditAccuracy = 2
-    DonorEnergySliderMin = DonorEnergySliderMin * DonorEnergyCalcConstant
-    DonorEnergySliderMax = DonorEnergySliderMax * DonorEnergyCalcConstant
+    donor_energy_min = 0.0
+    donor_energy_max = 2.0  # electron-Volt
+    donor_energy_accuracy = 2
 
-    AcceptorEnergyCalcConstant = 10000
-    AcceptorEnergySliderMin = 0.0
-    AcceptorEnergySliderMax = 1.0  # electron-Volt
-    AcceptorEnergyLineEditAccuracy = 2
-    AcceptorEnergySliderMin = AcceptorEnergySliderMin * AcceptorEnergyCalcConstant
-    AcceptorEnergySliderMax = AcceptorEnergySliderMax * AcceptorEnergyCalcConstant
+    acceptor_energy_min = 0.0
+    acceptor_energy_max = 1.0  # electron-Volt
+    acceptor_energy_accuracy = 2
 
     AcceptorConcentrationCalcConstant = 100
     AcceptorConcentrationSliderMin = 1.0 * AcceptorConcentrationCalcConstant

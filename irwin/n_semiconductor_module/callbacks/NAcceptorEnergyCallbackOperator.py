@@ -1,44 +1,24 @@
 from fompy.constants import eV
 
-from irwin.CallbackOperator import CallbackOperator
+from irwin.common.ValueInputOperator import ValueInputOperator
 from irwin.config import GUIParameters
-from irwin.n_semiconductor_module.NInputData import NInputData
+from irwin.config import n_defaults
 
 
-class NAcceptorEnergyCallbackOperator(CallbackOperator):
-    def __init__(self):
-        self.window = None
-        self.parameters = NInputData()
+class NAcceptorEnergyCallbackOperator(ValueInputOperator):
+    def __init__(self, input_data):
+        super().__init__(
+            GUIParameters.acceptor_energy_min,
+            GUIParameters.acceptor_energy_max,
+            GUIParameters.acceptor_energy_accuracy,
+            n_defaults.acceptor_energy
+        )
+        self.input_data = input_data
 
     def connect_callback(self, window):
-        self.window = window
+        self.connect_callback_implementation(
+            window.n_acceptor_energy_slider,
+            window.n_acceptor_energy_line_edit)
 
-        self.setup_callback_and_synchronize_slider(
-            validator_min=GUIParameters.AcceptorEnergySliderMin,
-            validator_max=GUIParameters.AcceptorEnergySliderMax,
-            validator_accuracy=GUIParameters.AcceptorEnergyLineEditAccuracy,
-            line_edit=self.window.n_AcceptorEnergylineEdit,
-            slider_min=GUIParameters.AcceptorEnergySliderMin,
-            slider_max=GUIParameters.AcceptorEnergySliderMax,
-            slider=self.window.n_AcceptorEnergyhorizontalSlider,
-            update_slider_func=self.update_energy_slider,
-            update_line_edit_func=self.update_energy_line_edit
-        )
-
-    def update_energy_slider(self):
-        self.update_slider(
-            line_edit=self.window.n_AcceptorEnergylineEdit,
-            slider=self.window.n_AcceptorEnergyhorizontalSlider,
-            calc_constant=GUIParameters.AcceptorEnergyCalcConstant
-        )
-
-    def update_energy_line_edit(self):
-        self.update_line_edit(
-            line_edit=self.window.n_AcceptorEnergylineEdit,
-            slider=self.window.n_AcceptorEnergyhorizontalSlider,
-            calc_constant=GUIParameters.AcceptorEnergyCalcConstant,
-            update_model_func=self.update_acceptor_energy
-        )
-
-    def update_acceptor_energy(self, val):
-        self.parameters.acceptor_energy = val * eV
+    def value_changed(self, value):
+        self.input_data.acceptor_energy = value * eV

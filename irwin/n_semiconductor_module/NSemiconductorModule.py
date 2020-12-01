@@ -1,5 +1,6 @@
 from irwin.ApplicationModule import ApplicationModule
 from irwin.config import n_defaults, N_TYPE_OUTPUT_FILE
+from irwin.n_semiconductor_module.NInputData import NInputData
 from irwin.n_semiconductor_module.callbacks.NAcceptorConcentrationCallbackOperator import \
     NAcceptorConcentrationCallbackOperator
 from irwin.n_semiconductor_module.callbacks.NAcceptorEnergyCallbackOperator import NAcceptorEnergyCallbackOperator
@@ -14,9 +15,9 @@ from irwin.n_semiconductor_module.callbacks.NTemperatureCallbackOperator import 
 class NSemiconductorModule(ApplicationModule):
     callback_operators = \
         [
-            NTemperatureCallbackOperator(),
-            NDonorEnergyCallbackOperator(),
-            NAcceptorEnergyCallbackOperator(),
+            NTemperatureCallbackOperator(NInputData()),
+            NDonorEnergyCallbackOperator(NInputData()),
+            NAcceptorEnergyCallbackOperator(NInputData()),
             NMaterialCallbackOperator(),
             NAcceptorConcentrationCallbackOperator(),
             NRadioButtonsCallbackOperator(),

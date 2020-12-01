@@ -607,7 +607,7 @@
           </widget>
          </item>
          <item row="2" column="1">
-          <widget class="QSlider" name="AcceptorEnergyhorizontalSlider">
+          <widget class="QSlider" name="p_acceptor_energy_slider">
            <property name="minimumSize">
             <size>
              <width>100</width>
@@ -663,7 +663,7 @@
           </widget>
          </item>
          <item row="2" column="3">
-          <widget class="QLineEdit" name="AcceptorEnergylineEdit">
+          <widget class="QLineEdit" name="p_acceptor_energy_line_edit">
            <property name="minimumSize">
             <size>
              <width>70</width>
@@ -679,7 +679,7 @@
           </widget>
          </item>
          <item row="3" column="1">
-          <widget class="QSlider" name="DonorEnergyhorizontalSlider">
+          <widget class="QSlider" name="p_donor_energy_slider">
            <property name="minimumSize">
             <size>
              <width>100</width>
@@ -692,7 +692,7 @@
           </widget>
          </item>
          <item row="3" column="3">
-          <widget class="QLineEdit" name="DonorEnergylineEdit">
+          <widget class="QLineEdit" name="p_donor_energy_line_edit">
            <property name="minimumSize">
             <size>
              <width>70</width>
@@ -751,7 +751,7 @@
           </widget>
          </item>
          <item row="1" column="1">
-          <widget class="QSlider" name="TemperaturehorizontalSlider">
+          <widget class="QSlider" name="p_temperature_slider">
            <property name="minimumSize">
             <size>
              <width>100</width>
@@ -764,7 +764,7 @@
           </widget>
          </item>
          <item row="1" column="3">
-          <widget class="QLineEdit" name="TemperaturelineEdit">
+          <widget class="QLineEdit" name="p_temperature_line_edit">
            <property name="minimumSize">
             <size>
              <width>70</width>
@@ -1412,7 +1412,7 @@
           </widget>
          </item>
          <item row="2" column="3">
-          <widget class="QLineEdit" name="n_DonorEnergylineEdit">
+          <widget class="QLineEdit" name="n_donor_energy_line_edit">
            <property name="minimumSize">
             <size>
              <width>70</width>
@@ -1438,7 +1438,7 @@
           </widget>
          </item>
          <item row="1" column="3">
-          <widget class="QLineEdit" name="n_TemperaturelineEdit">
+          <widget class="QLineEdit" name="n_temperature_line_edit">
            <property name="minimumSize">
             <size>
              <width>70</width>
@@ -1507,7 +1507,7 @@
           </widget>
          </item>
          <item row="3" column="1">
-          <widget class="QSlider" name="n_AcceptorEnergyhorizontalSlider">
+          <widget class="QSlider" name="n_acceptor_energy_slider">
            <property name="minimumSize">
             <size>
              <width>100</width>
@@ -1520,7 +1520,7 @@
           </widget>
          </item>
          <item row="1" column="1">
-          <widget class="QSlider" name="n_TemperaturehorizontalSlider">
+          <widget class="QSlider" name="n_temperature_slider">
            <property name="minimumSize">
             <size>
              <width>100</width>
@@ -1543,7 +1543,7 @@
           </widget>
          </item>
          <item row="3" column="3">
-          <widget class="QLineEdit" name="n_AcceptorEnergylineEdit">
+          <widget class="QLineEdit" name="n_acceptor_energy_line_edit">
            <property name="minimumSize">
             <size>
              <width>70</width>
@@ -1589,7 +1589,7 @@
           </widget>
          </item>
          <item row="2" column="1">
-          <widget class="QSlider" name="n_DonorEnergyhorizontalSlider">
+          <widget class="QSlider" name="n_donor_energy_slider">
            <property name="minimumSize">
             <size>
              <width>100</width>
@@ -1792,7 +1792,7 @@
   <connection>
    <sender>p_show_all</sender>
    <signal>toggled(bool)</signal>
-   <receiver>DonorEnergyhorizontalSlider</receiver>
+   <receiver>p_donor_energy_slider</receiver>
    <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1808,7 +1808,7 @@
   <connection>
    <sender>p_show_all</sender>
    <signal>toggled(bool)</signal>
-   <receiver>DonorEnergylineEdit</receiver>
+   <receiver>p_donor_energy_line_edit</receiver>
    <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1856,7 +1856,7 @@
   <connection>
    <sender>n_show_all</sender>
    <signal>toggled(bool)</signal>
-   <receiver>n_AcceptorEnergyhorizontalSlider</receiver>
+   <receiver>n_acceptor_energy_slider</receiver>
    <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1872,7 +1872,7 @@
   <connection>
    <sender>n_show_all</sender>
    <signal>toggled(bool)</signal>
-   <receiver>n_AcceptorEnergylineEdit</receiver>
+   <receiver>n_acceptor_energy_line_edit</receiver>
    <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel">
