@@ -5,7 +5,7 @@ from PyQt5.QtGui import QDoubleValidator
 from PyQt5.QtWidgets import QSlider, QLineEdit, QSpinBox
 
 from irwin.CallbackOperator import CallbackOperator
-from irwin.common.ValueInputOperator import squeeze, stretch
+from irwin.common.operators.ValueInputOperator import squeeze, stretch
 
 
 def get_mantissa_and_order(value):

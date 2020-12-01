@@ -1,8 +1,8 @@
 from fompy.units import unit
 
 from irwin.common.LogSpace import LogSpace
-from irwin.common.ScientificValueInputOperator import ScientificValueRange
-from irwin.common.ValueInputOperator import ValueRange
+from irwin.common.operators.ScientificValueInputOperator import ScientificValueRange
+from irwin.common.operators.ValueInputOperator import ValueRange
 
 P_TYPE_OUTPUT_FILE = 'P_type_irwin_curve.csv'
 N_TYPE_OUTPUT_FILE = 'N_type_irwin_curve.csv'
