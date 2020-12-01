@@ -9,7 +9,6 @@ from irwin.n_semiconductor_module.callbacks.NMaterialCallbackOperator import NMa
 from irwin.n_semiconductor_module.callbacks.NRadioButtonsCallbackOperator import NRadioButtonsCallbackOperator
 from irwin.n_semiconductor_module.callbacks.NTemperatureCallbackOperator import NTemperatureCallbackOperator
 from irwin.n_semiconductor_module.callbacks.NAutoFillOperator import NAutoFillOperator
-from irwin.n_semiconductor_module.callbacks.NCalculateAndSaveOperator import NCalculateAndSaveOperator
 
 
 class NSemiconductorModule(ApplicationModule):
@@ -21,9 +20,8 @@ class NSemiconductorModule(ApplicationModule):
             NMaterialCallbackOperator(),
             NAcceptorConcentrationCallbackOperator(),
             NRadioButtonsCallbackOperator(),
-            NCalculationCallbackOperator(),
+            NCalculationCallbackOperator(output_filename='N type irwin curve.csv'),
             NAutoFillOperator(n_defaults),
-            NCalculateAndSaveOperator()
         ]
 
     def __init__(self):

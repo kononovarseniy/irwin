@@ -10,7 +10,6 @@ from irwin.p_semiconductor_module.callbacks.PMaterialCallbackOperator import \
 from irwin.p_semiconductor_module.callbacks.PRadioButtonsCallbackOperator import PRadioButtonsCallbackOperator
 from irwin.p_semiconductor_module.callbacks.PTemperatureCallbackOperator import PTemperatureCallbackOperator
 from irwin.p_semiconductor_module.callbacks.PAutoFillOperator import PAutoFillOperator
-from irwin.p_semiconductor_module.callbacks.PCalculateAndSaveOperator import PCalculateAndSaveOperator
 
 
 class PSemiconductorModule(ApplicationModule):
@@ -19,12 +18,11 @@ class PSemiconductorModule(ApplicationModule):
             PTemperatureCallbackOperator(),
             PDonorEnergyCallbackOperator(),
             PMaterialCallbackOperator(),
-            PCalculationCallbackOperator(),
+            PCalculationCallbackOperator(output_filename='P type irwin curve.csv'),
             PRadioButtonsCallbackOperator(),
             PDonorConcentrationCallbackOperator(),
             PAcceptorEnergyCallbackOperator(),
             PAutoFillOperator(p_defaults),
-            PCalculateAndSaveOperator()
         ]
 
     def __init__(self):
