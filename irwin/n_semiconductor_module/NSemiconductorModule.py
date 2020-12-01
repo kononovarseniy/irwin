@@ -1,8 +1,6 @@
 from irwin.ApplicationModule import ApplicationModule
 from irwin.common.InputData import InputData
-from irwin.n_semiconductor_module.operators import NAcceptorConcentrationCallbackOperator, \
-    NAcceptorEnergyCallbackOperator, NCalculationCallbackOperator, NDonorEnergyCallbackOperator, \
-    NMaterialCallbackOperator, NRadioButtonsCallbackOperator, NTemperatureCallbackOperator
+from irwin.n_semiconductor_module.operators import *
 
 
 class NSemiconductorModule(ApplicationModule):

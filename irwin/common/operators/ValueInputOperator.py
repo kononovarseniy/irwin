@@ -84,3 +84,20 @@ def squeeze(value, minimum, maximum):
 
 def stretch(value, minimum, maximum):
     return minimum + (maximum - minimum) * value
+
+
+def value_input_operator(prop_name, allowed_range, default, slider, line_edit, unit=1):
+    class Operator(ValueInputOperator):
+        def __init__(self, input_data):
+            super().__init__(allowed_range, default)
+            self.input_data = input_data
+
+        def connect_callback(self, window):
+            self.connect_callback_implementation(
+                getattr(window, slider),
+                getattr(window, line_edit))
+
+        def value_changed(self, value):
+            setattr(self.input_data, prop_name, value * unit)
+
+    return Operator

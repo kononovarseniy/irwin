@@ -4,10 +4,30 @@ from irwin.common.operators.CalculationOperator import CalculationOperator
 from irwin.common.operators.MaterialInputOperator import MaterialInputOperator
 from irwin.common.operators.PlotTypeInputOperator import PlotTypeInputOperator
 from irwin.common.operators.ScientificValueInputOperator import ScientificValueInputOperator
-from irwin.common.operators.ValueInputOperator import ValueInputOperator
+from irwin.common.operators.ValueInputOperator import value_input_operator
 from irwin.config import Ranges, p_defaults, P_TYPE_OUTPUT_FILE
 from irwin.materials import P_MATERIALS
 from irwin.p_semiconductor_module.PDataVisualiser import PDataVisualiser
+
+PTemperatureCallbackOperator = value_input_operator(prop_name='temperature',
+                                                    allowed_range=Ranges.temperature_range,
+                                                    default=p_defaults.temperature,
+                                                    slider='p_temperature_slider',
+                                                    line_edit='p_temperature_line_edit')
+
+PAcceptorEnergyCallbackOperator = value_input_operator(prop_name='acceptor_energy',
+                                                       allowed_range=Ranges.acceptor_energy_range,
+                                                       default=p_defaults.acceptor_energy,
+                                                       slider='p_acceptor_energy_slider',
+                                                       line_edit='p_acceptor_energy_line_edit',
+                                                       unit=eV)
+
+PDonorEnergyCallbackOperator = value_input_operator(prop_name='donor_energy',
+                                                    allowed_range=Ranges.donor_energy_range,
+                                                    default=p_defaults.donor_energy,
+                                                    slider='p_donor_energy_slider',
+                                                    line_edit='p_donor_energy_line_edit',
+                                                    unit=eV)
 
 
 class PMaterialCallbackOperator(MaterialInputOperator):
@@ -24,57 +44,6 @@ class PRadioButtonsCallbackOperator(PlotTypeInputOperator):
             window.p_resistivity_radio_button,
             window.p_conductivity_radio_button
         )
-
-
-class PTemperatureCallbackOperator(ValueInputOperator):
-    def __init__(self, input_data):
-        super().__init__(
-            Ranges.temperature_range,
-            p_defaults.temperature
-        )
-        self.input_data = input_data
-
-    def connect_callback(self, window):
-        self.connect_callback_implementation(
-            window.p_temperature_slider,
-            window.p_temperature_line_edit)
-
-    def value_changed(self, value):
-        self.input_data.temperature = value
-
-
-class PAcceptorEnergyCallbackOperator(ValueInputOperator):
-    def __init__(self, input_data):
-        super().__init__(
-            Ranges.acceptor_energy_range,
-            p_defaults.acceptor_energy
-        )
-        self.input_data = input_data
-
-    def connect_callback(self, window):
-        self.connect_callback_implementation(
-            window.p_acceptor_energy_slider,
-            window.p_acceptor_energy_line_edit)
-
-    def value_changed(self, value):
-        self.input_data.acceptor_energy = value * eV
-
-
-class PDonorEnergyCallbackOperator(ValueInputOperator):
-    def __init__(self, input_data):
-        super().__init__(
-            Ranges.donor_energy_range,
-            p_defaults.donor_energy
-        )
-        self.input_data = input_data
-
-    def connect_callback(self, window):
-        self.connect_callback_implementation(
-            window.p_donor_energy_slider,
-            window.p_donor_energy_line_edit)
-
-    def value_changed(self, value):
-        self.input_data.donor_energy = value * eV
 
 
 class PDonorConcentrationCallbackOperator(ScientificValueInputOperator):
