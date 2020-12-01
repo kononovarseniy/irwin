@@ -19,7 +19,7 @@ class PSemiconductorModule(ApplicationModule):
             PTemperatureCallbackOperator(input_data),
             PDonorEnergyCallbackOperator(input_data),
             PMaterialCallbackOperator(input_data),
-            PCalculationCallbackOperator(input_data, output_filename=P_TYPE_OUTPUT_FILE),
+            PCalculationCallbackOperator(input_data),
             PRadioButtonsCallbackOperator(input_data),
             PDonorConcentrationCallbackOperator(input_data),
             PAcceptorEnergyCallbackOperator(input_data)
