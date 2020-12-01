@@ -2,6 +2,9 @@ from fompy.units import unit
 
 from irwin.common.LogSpace import LogSpace
 
+P_TYPE_OUTPUT_FILE = 'P_type_irwin_curve.csv'
+N_TYPE_OUTPUT_FILE = 'N_type_irwin_curve.csv'
+
 
 class Units:
     RESISTIVITY = unit('Ohm cm')
