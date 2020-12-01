@@ -14,7 +14,8 @@ class PCalculationCallbackOperator(CallbackOperator):
 
     def connect_callback(self, window):
         self.window = window
-        PDataVisualiser(self.calculator.model, self.window.p_type_plot)  # Visualiser registers itself
+        # DataVisualiser registers itself
+        PDataVisualiser(self.calculator.model, self.window.p_type_plot)
         window.p_calculate_button.clicked.connect(self.calculate_concentration)
         window.p_calculate_and_save_button.clicked.connect(self.calc_irwin_and_save)
 

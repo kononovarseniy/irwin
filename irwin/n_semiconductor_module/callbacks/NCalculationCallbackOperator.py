@@ -14,6 +14,7 @@ class NCalculationCallbackOperator(CallbackOperator):
 
     def connect_callback(self, window):
         self.window = window
+        # DataVisualiser registers itself
         NDataVisualiser(self.calculator.model, self.window.n_type_plot)
         window.n_calculate_button.clicked.connect(self.calc_irwin_curve)
         window.n_calculate_and_save_button.clicked.connect(self.calc_irwin_and_save)
