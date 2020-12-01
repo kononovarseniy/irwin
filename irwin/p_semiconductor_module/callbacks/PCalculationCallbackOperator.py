@@ -2,7 +2,7 @@ from irwin.CallbackOperator import CallbackOperator
 from irwin.common.IrwinCalculator import IrwinCalculator
 from irwin.p_semiconductor_module.PDataVisualiser import PDataVisualiser
 from irwin.p_semiconductor_module.PInputData import PInputData
-import pandas as pd
+from irwin.common.DataWriter import DataWriter
 
 
 class PCalculationCallbackOperator(CallbackOperator):
@@ -24,13 +24,7 @@ class PCalculationCallbackOperator(CallbackOperator):
 
     def calc_irwin_and_save(self):
         self.calculator.calculate_concentration(self.parameters)
-        self.save_results()
-
-    def save_results(self):
-        data = {
-            'conductivity': self.calculator.model.sigma,
-            'resistivity': self.calculator.model.rho,
-            'concentration': self.calculator.model.Ns
-        }
-        df = pd.DataFrame(data)
-        df.to_csv(self.output_filename)
+        DataWriter.save_results(filename=self.output_filename,
+                                concentration=self.calculator.model.Ns,
+                                conductivity=self.calculator.model.sigma,
+                                resistivity=self.calculator.model.rho)
