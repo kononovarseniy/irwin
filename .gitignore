@@ -25,4 +25,6 @@ __pycache__/
 .idea/misc.xml
 .idea/other.xml
 
-
+# Output files
+irwin/N_type_irwin_curve.csv
+irwin/P_type_irwin_curve.csv

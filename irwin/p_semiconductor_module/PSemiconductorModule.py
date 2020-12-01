@@ -1,6 +1,7 @@
 from irwin.ApplicationModule import ApplicationModule
-from irwin.config import p_defaults
+from irwin.config import p_defaults, P_TYPE_OUTPUT_FILE
 from irwin.p_semiconductor_module.callbacks.PAcceptorEnergyCallbackOperator import PAcceptorEnergyCallbackOperator
+from irwin.p_semiconductor_module.callbacks.PAutoFillOperator import PAutoFillOperator
 from irwin.p_semiconductor_module.callbacks.PCalculationCallbackOperator import PCalculationCallbackOperator
 from irwin.p_semiconductor_module.callbacks.PDonorConcentrationCallbackOperator import \
     PDonorConcentrationCallbackOperator
@@ -9,7 +10,6 @@ from irwin.p_semiconductor_module.callbacks.PMaterialCallbackOperator import \
     PMaterialCallbackOperator
 from irwin.p_semiconductor_module.callbacks.PRadioButtonsCallbackOperator import PRadioButtonsCallbackOperator
 from irwin.p_semiconductor_module.callbacks.PTemperatureCallbackOperator import PTemperatureCallbackOperator
-from irwin.p_semiconductor_module.callbacks.PAutoFillOperator import PAutoFillOperator
 
 
 class PSemiconductorModule(ApplicationModule):
@@ -18,11 +18,11 @@ class PSemiconductorModule(ApplicationModule):
             PTemperatureCallbackOperator(),
             PDonorEnergyCallbackOperator(),
             PMaterialCallbackOperator(),
-            PCalculationCallbackOperator(),
+            PCalculationCallbackOperator(output_filename=P_TYPE_OUTPUT_FILE),
             PRadioButtonsCallbackOperator(),
             PDonorConcentrationCallbackOperator(),
             PAcceptorEnergyCallbackOperator(),
-            PAutoFillOperator(p_defaults)
+            PAutoFillOperator(p_defaults),
         ]
 
     def __init__(self):
