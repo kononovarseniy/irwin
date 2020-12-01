@@ -1,6 +1,8 @@
 from fompy.units import unit
 
 from irwin.common.LogSpace import LogSpace
+from irwin.common.ScientificValueInputOperator import ScientificValueRange
+from irwin.common.ValueInputOperator import ValueRange
 
 P_TYPE_OUTPUT_FILE = 'P_type_irwin_curve.csv'
 N_TYPE_OUTPUT_FILE = 'N_type_irwin_curve.csv'
@@ -12,10 +14,6 @@ class Units:
     CONCENTRATION = unit('cm-3')
     RESISTIVITY_TEXT = r'$Ohm \cdot cm$'
     CONDUCTIVITY_TEXT = r'$\frac{1}{Ohm \cdot cm}$'
-
-
-class Ranges:
-    concentration_range = LogSpace(12, 20, 100)
 
 
 class DefaultValues:
@@ -44,19 +42,11 @@ p_defaults = DefaultValues(
 )
 
 
-class GUIParameters:
-    temperature_min = 0.0
-    temperature_max = 500.0  # Kelvin
-    temperature_accuracy = 1
+class Ranges:
+    concentration_range = LogSpace(12, 20, 100)
 
-    donor_energy_min = 0.0
-    donor_energy_max = 2.0  # electron-Volt
-    donor_energy_accuracy = 2
+    temperature_range = ValueRange(min_value=0, max_value=500, decimals=1)  # Kelvin
+    donor_energy_range = ValueRange(min_value=0, max_value=2, decimals=2)  # electron-Volt
+    acceptor_energy_range = ValueRange(min_value=0, max_value=2, decimals=2)  # electron-Volt
 
-    acceptor_energy_min = 0.0
-    acceptor_energy_max = 1.0  # electron-Volt
-    acceptor_energy_accuracy = 2
-
-    second_concentration_min_order = 0
-    second_concentration_max_order = 15
-    second_concentration_accuracy = 2
+    second_concentration_range = ScientificValueRange(min_order=0, max_order=15, mantissa_decimals=2)

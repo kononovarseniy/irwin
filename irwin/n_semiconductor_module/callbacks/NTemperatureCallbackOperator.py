@@ -1,13 +1,11 @@
 from irwin.common.ValueInputOperator import ValueInputOperator
-from irwin.config import GUIParameters, n_defaults
+from irwin.config import Ranges, n_defaults
 
 
 class NTemperatureCallbackOperator(ValueInputOperator):
     def __init__(self, input_data):
         super().__init__(
-            GUIParameters.temperature_min,
-            GUIParameters.temperature_max,
-            GUIParameters.temperature_accuracy,
+            Ranges.temperature_range,
             n_defaults.temperature
         )
         self.input_data = input_data

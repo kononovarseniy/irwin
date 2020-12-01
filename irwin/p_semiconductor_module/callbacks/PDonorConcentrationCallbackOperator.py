@@ -1,13 +1,11 @@
 from irwin.common.ScientificValueInputOperator import ScientificValueInputOperator
-from irwin.config import GUIParameters, p_defaults
+from irwin.config import Ranges, p_defaults
 
 
 class PDonorConcentrationCallbackOperator(ScientificValueInputOperator):
     def __init__(self, input_data):
         super().__init__(
-            GUIParameters.second_concentration_accuracy,
-            GUIParameters.second_concentration_min_order,
-            GUIParameters.second_concentration_max_order,
+            Ranges.second_concentration_range,
             p_defaults.second_concentration
         )
         self.input_data = input_data

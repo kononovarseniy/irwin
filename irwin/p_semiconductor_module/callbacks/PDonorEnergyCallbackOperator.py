@@ -1,16 +1,14 @@
 from fompy.constants import eV
 
 from irwin.common.ValueInputOperator import ValueInputOperator
-from irwin.config import GUIParameters
+from irwin.config import Ranges
 from irwin.config import p_defaults
 
 
 class PDonorEnergyCallbackOperator(ValueInputOperator):
     def __init__(self, input_data):
         super().__init__(
-            GUIParameters.donor_energy_min,
-            GUIParameters.donor_energy_max,
-            GUIParameters.donor_energy_accuracy,
+            Ranges.donor_energy_range,
             p_defaults.donor_energy
         )
         self.input_data = input_data

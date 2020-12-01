@@ -14,16 +14,20 @@ def get_mantissa_and_order(value):
     return m, o
 
 
+class ScientificValueRange:
+    def __init__(self, min_order, max_order, mantissa_decimals):
+        self.min_order = min_order
+        self.max_order = max_order
+        self.decimals = mantissa_decimals
+
+
 class ScientificValueInputOperator(CallbackOperator, ABC):
     line_edit: QLineEdit
     slider: QSlider
     spinbox: QSpinBox
 
-    def __init__(self, mantissa_decimals, min_order, max_order, default):
-        self.decimals = mantissa_decimals
-
-        self.min_order = min_order
-        self.max_order = max_order
+    def __init__(self, value_range, default):
+        self.value_range = value_range
         self.default = default
         self.default_mantissa, self.default_order = get_mantissa_and_order(default)
 
@@ -37,8 +41,8 @@ class ScientificValueInputOperator(CallbackOperator, ABC):
         validator = QDoubleValidator()
         self.line_edit.setValidator(validator)
 
-        self.spinbox.setMinimum(self.min_order)
-        self.spinbox.setMaximum(self.max_order)
+        self.spinbox.setMinimum(self.value_range.min_order)
+        self.spinbox.setMaximum(self.value_range.max_order)
 
         self.set_slider_value(self.default_mantissa)
         self.set_spinbox_value(self.default_order)
@@ -106,4 +110,4 @@ class ScientificValueInputOperator(CallbackOperator, ABC):
         return self.line_edit.locale().toDouble(self.line_edit.text())[0]
 
     def set_line_edit_value(self, value):
-        self.line_edit.setText(self.line_edit.locale().toString(float(value), 'e', self.decimals))
+        self.line_edit.setText(self.line_edit.locale().toString(float(value), 'e', self.value_range.decimals))

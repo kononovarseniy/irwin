@@ -6,14 +6,19 @@ from PyQt5.QtWidgets import QSlider, QLineEdit
 from irwin.CallbackOperator import CallbackOperator
 
 
+class ValueRange:
+    def __init__(self, min_value, max_value, decimals):
+        self.min = min_value
+        self.max = max_value
+        self.decimals = decimals
+
+
 class ValueInputOperator(CallbackOperator, ABC):
     line_edit: QLineEdit
     slider: QSlider
 
-    def __init__(self, min_value, max_value, decimals, default):
-        self.min_value = min_value
-        self.max_value = max_value
-        self.decimals = decimals
+    def __init__(self, value_range, default):
+        self.value_range = value_range
         self.default = default
         self.changing_value = False
 
@@ -22,7 +27,7 @@ class ValueInputOperator(CallbackOperator, ABC):
         self.line_edit = line_edit
 
         validator = QDoubleValidator()
-        validator.setRange(self.min_value, self.max_value, self.decimals)
+        validator.setRange(self.value_range.min, self.value_range.max, self.value_range.decimals)
         self.line_edit.setValidator(validator)
 
         self.set_slider_value(self.default)
@@ -60,17 +65,17 @@ class ValueInputOperator(CallbackOperator, ABC):
 
     def get_slider_value(self):
         tmp = squeeze(self.slider.value(), self.slider.minimum(), self.slider.maximum())
-        return stretch(tmp, self.min_value, self.max_value)
+        return stretch(tmp, self.value_range.min, self.value_range.max)
 
     def set_slider_value(self, value):
-        tmp = squeeze(value, self.min_value, self.max_value)
+        tmp = squeeze(value, self.value_range.min, self.value_range.max)
         self.slider.setValue(stretch(tmp, self.slider.minimum(), self.slider.maximum()))
 
     def get_line_edit_value(self):
         return self.line_edit.locale().toDouble(self.line_edit.text())[0]
 
     def set_line_edit_value(self, value):
-        self.line_edit.setText(self.line_edit.locale().toString(float(value), 'f', self.decimals))
+        self.line_edit.setText(self.line_edit.locale().toString(float(value), 'f', self.value_range.decimals))
 
 
 def squeeze(value, minimum, maximum):
