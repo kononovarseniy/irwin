@@ -1,8 +1,8 @@
 from irwin.CallbackOperator import CallbackOperator
+from irwin.common.DataWriter import DataWriter
 from irwin.common.IrwinCalculator import IrwinCalculator
 from irwin.p_semiconductor_module.PDataVisualiser import PDataVisualiser
 from irwin.p_semiconductor_module.PInputData import PInputData
-from irwin.common.DataWriter import DataWriter
 
 
 class PCalculationCallbackOperator(CallbackOperator):
@@ -24,7 +24,4 @@ class PCalculationCallbackOperator(CallbackOperator):
 
     def calc_irwin_and_save(self):
         self.calculator.calculate_concentration(self.parameters)
-        DataWriter.save_results(filename=self.output_filename,
-                                concentration=self.calculator.model.Ns,
-                                conductivity=self.calculator.model.sigma,
-                                resistivity=self.calculator.model.rho)
+        DataWriter.save_results(self.output_filename, self.calculator.model)
