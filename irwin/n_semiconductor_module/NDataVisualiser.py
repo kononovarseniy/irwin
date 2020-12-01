@@ -12,13 +12,13 @@ class NDataVisualiser(Visualiser):
         self._plot_canvas.plot(
             self._model.Ns / Units.CONCENTRATION,
             self._model.rho / Units.RESISTIVITY,
-            labels=['Acceptor concentrations', 'Resistivity'])
+            labels=['Acceptor concentration', f'Resistivity, {Units.RESISTIVITY_TEXT}'])
 
     def plot_conductivity(self):
         self._plot_canvas.plot(
             self._model.Ns / Units.CONCENTRATION,
             self._model.sigma / Units.CONDUCTIVITY,
-            labels=['Acceptor concentrations', 'Conductivity'])
+            labels=['Acceptor concentration', f'Conductivity, {Units.CONDUCTIVITY_TEXT}'])
 
     #  overriden
     def update_model(self):

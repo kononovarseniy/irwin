@@ -12,13 +12,13 @@ class PDataVisualiser(Visualiser):
         self._plot_canvas.plot(
             self._model.Ns / Units.CONCENTRATION,
             self._model.rho / Units.RESISTIVITY,
-            labels=['Donor concentrations', 'Resistivity'])
+            labels=['Donor concentrations', f'Resistivity, {Units.RESISTIVITY_TEXT}'])
 
     def plot_conductivity(self):
         self._plot_canvas.plot(
             self._model.Ns / Units.CONCENTRATION,
             self._model.sigma / Units.CONDUCTIVITY,
-            labels=['Donor concentrations', 'Conductivity'])
+            labels=['Donor concentrations', f'Conductivity, {Units.CONDUCTIVITY_TEXT}'])
 
     #  overriden
 

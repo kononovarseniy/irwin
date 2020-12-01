@@ -10,6 +10,8 @@ class Units:
     RESISTIVITY = unit('Ohm cm')
     CONDUCTIVITY = unit('1 / Ohm cm')
     CONCENTRATION = unit('cm-3')
+    RESISTIVITY_TEXT = r'$Ohm \cdot cm$'
+    CONDUCTIVITY_TEXT = r'$\frac{1}{Ohm \cdot cm}$'
 
 
 class Ranges:
