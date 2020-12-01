@@ -12,6 +12,7 @@ class MaterialInputOperator(CallbackOperator, ABC):
         self.input_data = input_data
         self.materials = materials
         self.default = default
+        self.input_data.material = self.materials[self.default]
 
     def connect_callback_implementation(self, combobox):
         self.combobox = combobox

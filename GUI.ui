@@ -544,7 +544,7 @@
              <number>0</number>
             </property>
             <item>
-             <widget class="QRadioButton" name="ResistivityradioButton">
+             <widget class="QRadioButton" name="p_resistivity_radio_button">
               <property name="enabled">
                <bool>true</bool>
               </property>
@@ -560,7 +560,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QRadioButton" name="ConductivityradioButton">
+             <widget class="QRadioButton" name="p_conductivity_radio_button">
               <property name="text">
                <string>Conductivity</string>
               </property>
@@ -1338,7 +1338,7 @@
              <number>0</number>
             </property>
             <item>
-             <widget class="QRadioButton" name="n_ResistivityradioButton">
+             <widget class="QRadioButton" name="n_resistivity_radio_button">
               <property name="enabled">
                <bool>true</bool>
               </property>
@@ -1354,7 +1354,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QRadioButton" name="n_ConductivityradioButton">
+             <widget class="QRadioButton" name="n_conductivity_radio_button">
               <property name="text">
                <string>Conductivity</string>
               </property>
