@@ -39,11 +39,11 @@ class IrwinCalculator:
         print(f'Calculator begins calc with parameters {input_data}')
 
         if input_data.type == 'n':
-            Na = input_data.acceptor_concentration
-            Nd = Ns = input_data.donor_concentration_range.get_array()
+            Na = input_data.secondary_concentration
+            Nd = Ns = input_data.primary_concentration_range.get_array()
         else:
-            Na = Ns = input_data.acceptor_concentration_range.get_array()
-            Nd = input_data.donor_concentration
+            Na = Ns = input_data.primary_concentration_range.get_array()
+            Nd = input_data.secondary_concentration
 
         try:
             sigma = conductivity(input_data.material, input_data.type,

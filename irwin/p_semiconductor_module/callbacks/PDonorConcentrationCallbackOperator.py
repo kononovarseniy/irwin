@@ -20,4 +20,4 @@ class PDonorConcentrationCallbackOperator(ScientificValueInputOperator):
         )
 
     def value_changed(self, value):
-        self.input_data.donor_concentration = value
+        self.input_data.secondary_concentration = value

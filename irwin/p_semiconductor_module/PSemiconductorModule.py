@@ -1,6 +1,6 @@
 from irwin.ApplicationModule import ApplicationModule
+from irwin.common.InputData import InputData
 from irwin.config import p_defaults, P_TYPE_OUTPUT_FILE
-from irwin.p_semiconductor_module.PInputData import PInputData
 from irwin.p_semiconductor_module.callbacks.PAcceptorEnergyCallbackOperator import PAcceptorEnergyCallbackOperator
 from irwin.p_semiconductor_module.callbacks.PAutoFillOperator import PAutoFillOperator
 from irwin.p_semiconductor_module.callbacks.PCalculationCallbackOperator import PCalculationCallbackOperator
@@ -14,7 +14,7 @@ from irwin.p_semiconductor_module.callbacks.PTemperatureCallbackOperator import 
 
 
 class PSemiconductorModule(ApplicationModule):
-    input_data = PInputData()
+    input_data = InputData('p')
     callback_operators = \
         [
             PTemperatureCallbackOperator(input_data),
