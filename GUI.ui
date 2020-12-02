@@ -1644,13 +1644,13 @@
   <customwidget>
    <class>PlotCanvas</class>
    <extends>QWidget</extends>
-   <header>irwin.PlotCanvas</header>
+   <header>irwin.widgets.PlotCanvas</header>
    <container>1</container>
   </customwidget>
   <customwidget>
    <class>ValidatedLineEdit</class>
    <extends>QLineEdit</extends>
-   <header>ValidatedLineEdit</header>
+   <header>irwin.widgets.ValidatedLineEdit</header>
   </customwidget>
  </customwidgets>
  <resources/>

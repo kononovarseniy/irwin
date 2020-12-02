@@ -655,5 +655,5 @@ class Ui_MainWindow(object):
         self.n_calculate_button.setText(_translate("MainWindow", "Calculate"))
         self.n_calculate_and_save_button.setText(_translate("MainWindow", "Calculate && Save"))
         self.fompy_label.setText(_translate("MainWindow", "Powered by <b>fti-fompy</b>"))
-from ValidatedLineEdit import ValidatedLineEdit
-from irwin.PlotCanvas import PlotCanvas
+from irwin.widgets.PlotCanvas import PlotCanvas
+from irwin.widgets.ValidatedLineEdit import ValidatedLineEdit
