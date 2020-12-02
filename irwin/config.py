@@ -27,18 +27,18 @@ class DefaultValues:
 
 n_defaults = DefaultValues(
     material='Si',
-    temperature=250,
+    temperature=300,
     donor_energy=0.75,
-    acceptor_energy=0.4,
-    second_concentration=3.48e2
+    acceptor_energy=0.04,
+    second_concentration=1e10
 )
 
 p_defaults = DefaultValues(
     material='Si',
     temperature=300,
     donor_energy=0.75,
-    acceptor_energy=0.4,
-    second_concentration=3.48e2
+    acceptor_energy=0.04,
+    second_concentration=1e10
 )
 
 
