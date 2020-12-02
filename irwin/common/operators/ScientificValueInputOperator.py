@@ -39,6 +39,9 @@ class ScientificValueInputOperator(CallbackOperator, ABC):
         self.spinbox = spinbox
 
         validator = QDoubleValidator()
+        validator.setRange(10 ** self.value_range.min_order,
+                           10 ** (self.value_range.max_order + 1),
+                           self.value_range.decimals)
         self.line_edit.setValidator(validator)
 
         self.spinbox.setMinimum(self.value_range.min_order)
@@ -81,10 +84,11 @@ class ScientificValueInputOperator(CallbackOperator, ABC):
         self.changing_value = True
 
         value = self.get_line_edit_value()
-        m, o = get_mantissa_and_order(value)
-        self.set_slider_value(m)
-        self.set_spinbox_value(o)
-        self.value_changed(value)
+        if value is not None:
+            m, o = get_mantissa_and_order(value)
+            self.set_slider_value(m)
+            self.set_spinbox_value(o)
+            self.value_changed(value)
 
         self.changing_value = False
 
@@ -107,6 +111,8 @@ class ScientificValueInputOperator(CallbackOperator, ABC):
         self.spinbox.setValue(value)
 
     def get_line_edit_value(self):
+        if not self.line_edit.hasAcceptableInput():
+            return None
         return self.line_edit.locale().toDouble(self.line_edit.text())[0]
 
     def set_line_edit_value(self, value):

@@ -54,8 +54,9 @@ class ValueInputOperator(CallbackOperator, ABC):
         self.changing_value = True
 
         value = self.get_line_edit_value()
-        self.set_slider_value(value)
-        self.value_changed(value)
+        if value is not None:
+            self.set_slider_value(value)
+            self.value_changed(value)
 
         self.changing_value = False
 
@@ -72,6 +73,8 @@ class ValueInputOperator(CallbackOperator, ABC):
         self.slider.setValue(stretch(tmp, self.slider.minimum(), self.slider.maximum()))
 
     def get_line_edit_value(self):
+        if not self.line_edit.hasAcceptableInput():
+            return None
         return self.line_edit.locale().toDouble(self.line_edit.text())[0]
 
     def set_line_edit_value(self, value):

@@ -634,7 +634,7 @@
           </widget>
          </item>
          <item row="2" column="3">
-          <widget class="QLineEdit" name="p_acceptor_energy_line_edit">
+          <widget class="ValidatedLineEdit" name="p_acceptor_energy_line_edit">
            <property name="minimumSize">
             <size>
              <width>70</width>
@@ -650,7 +650,7 @@
           </widget>
          </item>
          <item row="3" column="3">
-          <widget class="QLineEdit" name="p_donor_energy_line_edit">
+          <widget class="ValidatedLineEdit" name="p_donor_energy_line_edit">
            <property name="minimumSize">
             <size>
              <width>70</width>
@@ -680,7 +680,7 @@
           </widget>
          </item>
          <item row="4" column="3">
-          <widget class="QLineEdit" name="p_donor_concentration_line_edit">
+          <widget class="ValidatedLineEdit" name="p_donor_concentration_line_edit">
            <property name="minimumSize">
             <size>
              <width>70</width>
@@ -692,9 +692,6 @@
              <width>70</width>
              <height>16777215</height>
             </size>
-           </property>
-           <property name="readOnly">
-            <bool>true</bool>
            </property>
           </widget>
          </item>
@@ -709,7 +706,7 @@
           </widget>
          </item>
          <item row="1" column="3">
-          <widget class="QLineEdit" name="p_temperature_line_edit">
+          <widget class="ValidatedLineEdit" name="p_temperature_line_edit">
            <property name="minimumSize">
             <size>
              <width>70</width>
@@ -1375,7 +1372,7 @@
           </widget>
          </item>
          <item row="2" column="3">
-          <widget class="QLineEdit" name="n_donor_energy_line_edit">
+          <widget class="ValidatedLineEdit" name="n_donor_energy_line_edit">
            <property name="minimumSize">
             <size>
              <width>70</width>
@@ -1401,7 +1398,7 @@
           </widget>
          </item>
          <item row="1" column="3">
-          <widget class="QLineEdit" name="n_temperature_line_edit">
+          <widget class="ValidatedLineEdit" name="n_temperature_line_edit">
            <property name="minimumSize">
             <size>
              <width>70</width>
@@ -1451,7 +1448,7 @@
           </widget>
          </item>
          <item row="4" column="3">
-          <widget class="QLineEdit" name="n_acceptor_concentration_line_edit">
+          <widget class="ValidatedLineEdit" name="n_acceptor_concentration_line_edit">
            <property name="minimumSize">
             <size>
              <width>70</width>
@@ -1463,9 +1460,6 @@
              <width>70</width>
              <height>16777215</height>
             </size>
-           </property>
-           <property name="readOnly">
-            <bool>true</bool>
            </property>
           </widget>
          </item>
@@ -1480,7 +1474,7 @@
           </widget>
          </item>
          <item row="3" column="3">
-          <widget class="QLineEdit" name="n_acceptor_energy_line_edit">
+          <widget class="ValidatedLineEdit" name="n_acceptor_energy_line_edit">
            <property name="minimumSize">
             <size>
              <width>70</width>
@@ -1652,6 +1646,11 @@
    <extends>QWidget</extends>
    <header>irwin.PlotCanvas</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ValidatedLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>ValidatedLineEdit</header>
   </customwidget>
  </customwidgets>
  <resources/>
